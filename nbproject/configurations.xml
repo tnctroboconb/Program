@@ -6,11 +6,16 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="Common" projectFiles="true">
         <itemPath>Common/Config.h</itemPath>
+        <itemPath>Common/TypeDef.h</itemPath>
+        <itemPath>Common/StdInc.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Device" projectFiles="true">
+        <logicalFolder name="f2" displayName="Convert" projectFiles="true">
+          <itemPath>Device/Convert/AnaToDigi.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="f1" displayName="Serial" projectFiles="true">
           <itemPath>Device/Serial/I2C.h</itemPath>
-          <itemPath>Serial/UART.h</itemPath>
+          <itemPath>Device/Serial/UART.h</itemPath>
         </logicalFolder>
         <itemPath>Device/Init.h</itemPath>
         <itemPath>Device/PWM.h</itemPath>
@@ -25,9 +30,12 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Device" projectFiles="true">
+        <logicalFolder name="f2" displayName="Convert" projectFiles="true">
+          <itemPath>Device/Convert/AnaToDigi.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="f1" displayName="Serial" projectFiles="true">
           <itemPath>Device/Serial/I2C.c</itemPath>
-          <itemPath>Serial/UART.c</itemPath>
+          <itemPath>Device/Serial/UART.c</itemPath>
         </logicalFolder>
         <itemPath>Device/Init.c</itemPath>
         <itemPath>Device/PWM.c</itemPath>
@@ -39,6 +47,8 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>../../../../Downloads/NewPowerSupply.jpg</itemPath>
+      <itemPath>../../../../Downloads/datasheet.pdf</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

@@ -1,8 +1,8 @@
-#include <xc.h>
+#include "../../Common/StdInc.h"
 #include "I2C.h"
 
 #if SLAVE == 1
-void Init_I2C(Address* Addr){
+void Init_I2C(Address_t* Addr){
     SSP1CON1bits.WCOL = 0;
     SSP1CON1bits.SSPOV = 0;
     SSP1CON1bits.SSPEN = ENABLE;
@@ -31,7 +31,7 @@ void IdleI2C(){
     while(SSP1STATbits.R_NOT_W);
 }
 
-void GetID(Address* Addr){
+void GetID(Address_t* Addr){
     Addr->ID0 = PORTAbits.RA0;
     Addr->ID1 = (PORTAbits.RA1 << 1);
     Addr->ID2 = (PORTAbits.RA2 << 2);

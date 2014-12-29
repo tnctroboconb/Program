@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Device/Serial/I2C.c Serial/UART.c Device/Init.c Device/PWM.c main.c Motor.c
+SOURCEFILES_QUOTED_IF_SPACED=Device/Serial/I2C.c Device/Init.c Device/PWM.c main.c Motor.c Device/Serial/UART.c Device/Convert/AnaToDigi.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Serial/UART.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Motor.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Device/Serial/I2C.o.d ${OBJECTDIR}/Serial/UART.o.d ${OBJECTDIR}/Device/Init.o.d ${OBJECTDIR}/Device/PWM.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Motor.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Motor.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Convert/AnaToDigi.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Device/Serial/I2C.o.d ${OBJECTDIR}/Device/Init.o.d ${OBJECTDIR}/Device/PWM.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Motor.o.d ${OBJECTDIR}/Device/Serial/UART.o.d ${OBJECTDIR}/Device/Convert/AnaToDigi.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Serial/UART.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Motor.o
+OBJECTFILES=${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Motor.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Convert/AnaToDigi.o
 
 # Source Files
-SOURCEFILES=Device/Serial/I2C.c Serial/UART.c Device/Init.c Device/PWM.c main.c Motor.c
+SOURCEFILES=Device/Serial/I2C.c Device/Init.c Device/PWM.c main.c Motor.c Device/Serial/UART.c Device/Convert/AnaToDigi.c
 
 
 CFLAGS=
@@ -89,13 +89,6 @@ ${OBJECTDIR}/Device/Serial/I2C.o: Device/Serial/I2C.c  nbproject/Makefile-${CND_
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/Serial/I2C.c  -o ${OBJECTDIR}/Device/Serial/I2C.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/Serial/I2C.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Device/Serial/I2C.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/Serial/UART.o: Serial/UART.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Serial 
-	@${RM} ${OBJECTDIR}/Serial/UART.o.d 
-	@${RM} ${OBJECTDIR}/Serial/UART.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Serial/UART.c  -o ${OBJECTDIR}/Serial/UART.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Serial/UART.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/Serial/UART.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/Device/Init.o: Device/Init.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Device 
 	@${RM} ${OBJECTDIR}/Device/Init.o.d 
@@ -124,6 +117,20 @@ ${OBJECTDIR}/Motor.o: Motor.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Motor.c  -o ${OBJECTDIR}/Motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Motor.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/Device/Serial/UART.o: Device/Serial/UART.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Device/Serial 
+	@${RM} ${OBJECTDIR}/Device/Serial/UART.o.d 
+	@${RM} ${OBJECTDIR}/Device/Serial/UART.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/Serial/UART.c  -o ${OBJECTDIR}/Device/Serial/UART.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/Serial/UART.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Device/Serial/UART.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Device/Convert/AnaToDigi.o: Device/Convert/AnaToDigi.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Device/Convert 
+	@${RM} ${OBJECTDIR}/Device/Convert/AnaToDigi.o.d 
+	@${RM} ${OBJECTDIR}/Device/Convert/AnaToDigi.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/Convert/AnaToDigi.c  -o ${OBJECTDIR}/Device/Convert/AnaToDigi.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/Convert/AnaToDigi.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Device/Convert/AnaToDigi.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/Device/Serial/I2C.o: Device/Serial/I2C.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Device/Serial 
@@ -131,13 +138,6 @@ ${OBJECTDIR}/Device/Serial/I2C.o: Device/Serial/I2C.c  nbproject/Makefile-${CND_
 	@${RM} ${OBJECTDIR}/Device/Serial/I2C.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/Serial/I2C.c  -o ${OBJECTDIR}/Device/Serial/I2C.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/Serial/I2C.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Device/Serial/I2C.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
-${OBJECTDIR}/Serial/UART.o: Serial/UART.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Serial 
-	@${RM} ${OBJECTDIR}/Serial/UART.o.d 
-	@${RM} ${OBJECTDIR}/Serial/UART.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Serial/UART.c  -o ${OBJECTDIR}/Serial/UART.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Serial/UART.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/Serial/UART.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/Device/Init.o: Device/Init.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Device 
@@ -166,6 +166,20 @@ ${OBJECTDIR}/Motor.o: Motor.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Motor.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Motor.c  -o ${OBJECTDIR}/Motor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Motor.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Motor.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Device/Serial/UART.o: Device/Serial/UART.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Device/Serial 
+	@${RM} ${OBJECTDIR}/Device/Serial/UART.o.d 
+	@${RM} ${OBJECTDIR}/Device/Serial/UART.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/Serial/UART.c  -o ${OBJECTDIR}/Device/Serial/UART.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/Serial/UART.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Device/Serial/UART.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Device/Convert/AnaToDigi.o: Device/Convert/AnaToDigi.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Device/Convert 
+	@${RM} ${OBJECTDIR}/Device/Convert/AnaToDigi.o.d 
+	@${RM} ${OBJECTDIR}/Device/Convert/AnaToDigi.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/Convert/AnaToDigi.c  -o ${OBJECTDIR}/Device/Convert/AnaToDigi.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/Convert/AnaToDigi.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Device/Convert/AnaToDigi.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

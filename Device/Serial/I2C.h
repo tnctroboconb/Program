@@ -65,7 +65,7 @@
 #endif
 
 
-struct myID {
+typedef struct myID {
     unsigned    ID:4;
     union{
         unsigned    ID0:1;
@@ -73,16 +73,16 @@ struct myID {
         unsigned    ID2:1;
         unsigned    ID3:1;
     };
-};
+} Address_t;
 
-typedef struct myID Address;
+//typedef struct myID Address;
 
-void Init_I2C(Address*);
+void Init_I2C(Address_t*);
 void Start_I2C();
 void Restart_I2C();
 void IdleI2C();
 void Send_Data();
 void Get_Data();
-void GetID(Address*);
+void GetID(Address_t*);
 
 #endif	/* I2C_H */

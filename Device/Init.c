@@ -1,4 +1,4 @@
-#include <xc.h>
+#include "../Common/StdInc.h"
 #include "Init.h"
 
 void Init_Device(){

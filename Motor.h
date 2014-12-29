@@ -8,27 +8,20 @@
 #ifndef MOTOR_H
 #define	MOTOR_H
 
-#define FCY 32000000UL
-
-#include <xc.h>
-#include <libpic30.h>
-#include <p24F08KL200.h>
-
-
 #define DIRECTION_PIN
 
-struct MotorData{
+typedef struct MotorData{
     unsigned    state:8;
     union{
         unsigned    duty:7;
         unsigned    direction:1;
     };
-};
+} State_t;
 
-typedef struct MotorData State;
+//typedef struct MotorData State;
 
-void SetToNext(State*,State*,State*);
-void GetData(State*);
+void SetToNext(State_t*,State_t*,State_t*);
+void GetData(State_t*);
 
 #endif	/* MOTOR_H */
 

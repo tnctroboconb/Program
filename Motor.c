@@ -1,8 +1,9 @@
+#include "Common/StdInc.h"
 #include "Motor.h"
 #include "Device/PWM.h"
 
 
-void SetToNext(State* NowMotorState,State *NextMotorState,State*TargetMotorState){
+void SetToNext(State_t* NowMotorState,State_t *NextMotorState,State_t*TargetMotorState){
     char cnt;
     if(TargetMotorState->direction != NowMotorState->direction){
         __delay_us(20);
@@ -15,6 +16,6 @@ void SetToNext(State* NowMotorState,State *NextMotorState,State*TargetMotorState
     __delay_us(5);
 }
 
-void GetData(State* NextMotorState){
+void GetData(State_t* NextMotorState){
     NextMotorState->state = SSP1BUF;
 }
