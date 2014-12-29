@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>MotorDriver</name>
+            <name>PIC24F08KL200</name>
             <creation-uuid>ab054262-5225-4d58-b8a0-477546feaaf5</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

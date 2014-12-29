@@ -8,21 +8,10 @@
 #include "Common/Config.h"
 #include "Common/TypeDef.h"
 #include "Common/StdInc.h"
-#include "Motor.h"
-#include "Device/Serial/I2C.h"
-#include "Device/Init.h"
-#include "Device/PWM.h"
-#include "Device/Convert/AnaToDigi.h"
+#include "Common/Struct.h"
+#include "Common/Used.h"
 
 
 int main(){
-    Address_t MotorID;
-    State_t NowMotorState,NextMotorState,TargetMotorState;
     Init_Device();
-    GetID(&MotorID);
-    while(1){
-        GetData(&NextMotorState);
-        SetToNext(&NowMotorState,&NextMotorState,&TargetMotorState);
-    }
-    return 0;
 }

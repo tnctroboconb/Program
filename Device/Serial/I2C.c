@@ -3,15 +3,18 @@
 
 #if SLAVE == 1
 void Init_I2C(Address_t* Addr){
+    //SSP1CON1 Initialization
     SSP1CON1bits.WCOL = 0;
     SSP1CON1bits.SSPOV = 0;
     SSP1CON1bits.SSPEN = ENABLE;
     SSP1CON1bits.CKP = 0;
     SSP1CON1bits.SSPM = MODE;
-    
+
+    //SSP1CON2 Initialization
     SSP1CON2bits.GCEN = GCALL;
     SSP1CON2bits.SEN = 1;
-    
+
+    //SSP1CON3 Initialization
     SSP1CON3bits.PCIE = 1;
     SSP1CON3bits.SCIE = 1;
     SSP1CON3bits.BOEN = 1;
@@ -19,7 +22,8 @@ void Init_I2C(Address_t* Addr){
     SSP1CON3bits.SBCDE = 0;
     SSP1CON3bits.AHEN = 0;
     SSP1CON3bits.DHEN = 0;
-    
+
+    //MotorDriverAddress
     SSP1ADD = Addr->ID;
 }
 

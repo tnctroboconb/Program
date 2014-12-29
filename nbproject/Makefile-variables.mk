@@ -6,8 +6,8 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=MotorDriver.X.production.hex
-CND_ARTIFACT_PATH_default=dist/default/production/MotorDriver.X.production.hex
+CND_ARTIFACT_NAME_default=PIC24F08KL200.X.production.hex
+CND_ARTIFACT_PATH_default=dist/default/production/PIC24F08KL200.X.production.hex
 CND_PACKAGE_DIR_default=${CND_DISTDIR}/default/package
-CND_PACKAGE_NAME_default=motordriver.x.tar
-CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/motordriver.x.tar
+CND_PACKAGE_NAME_default=pic24f08kl200.x.tar
+CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/pic24f08kl200.x.tar

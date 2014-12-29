@@ -1,5 +1,8 @@
 #include "../../Common/StdInc.h"
 #include "AnaToDigi.h"
+#include "../../User/Battery.h"
+
+#if CONVERT_ENABLE == 1
 
 void ADInit(){
     //AD1CON1 Initialization
@@ -26,7 +29,7 @@ void ADInit(){
     AD1CON3bits.ADCS = 1;
 }
 
-void BeforConvert(const char PIN){
+void BeforConvert(CINT8 PIN){
     AD1CHSbits.CH0NB = USE_AN0_PIN_TO_ANALOG_INPUT;
     AD1CHSbits.CH0SB = PIN;
     AD1CHSbits.CH0NA = USE_AN1_PIN_TO_ANALOG_INPUT;
@@ -37,7 +40,7 @@ void StartConvert(){
     while(AD1CON1bits.DONE);
 }
 
-void Convert(BatteryData_t* Battery,const char PIN){
+void Convert(BatteryData_t* Battery,CINT8 PIN){
     BeforConvert(PIN);
     StartConvert();
     Battery->Result = ADC1BUF0;
@@ -46,30 +49,15 @@ void Convert(BatteryData_t* Battery,const char PIN){
     UseThis(Battery);
 }
 
-void Res_To_Volt(BatteryData_t* Battery){
-    Battery->tmp = (12.6 * (Battery->Result / 1024));
+void inline Res_To_Volt(BatteryData_t* Battery){
+    Battery->tmp = ((4.2 * CELLS) * (Battery->Result / 1024));
 }
 
-void Volt_To_Perce(BatteryData_t* Battery){
+void inline Volt_To_Perce(BatteryData_t* Battery){
     if(Battery->tmp > Battery->Voltage){
         Battery->Voltage = Battery->tmp;
-        Battery->Percent = ((12.6 / Battery->Voltage) * 100);
+        Battery->Percent = (((4.2 * CELLS) / Battery->Voltage) * 100);
     }else
         Battery->Voltage = Battery->tmp;
 }
-
-void UseThis(BatteryData_t* Battery){
-    if(Battery->Percent < 5)
-        Battery->Enable = 0;
-    if(Battery->Percent > 90)
-        Battery->Enable = 1;
-    switch(Battery->ID){
-        case 0:
-            MAIN_BATTERY = Battery->Enable;
-            SUB_BATTERY = !MAIN_BATTERY;
-            break;
-        case 1:
-            SUB_BATTERY = !MAIN_BATTERY;
-            break;
-    }
-}
+#endif

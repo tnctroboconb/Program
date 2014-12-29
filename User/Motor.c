@@ -1,10 +1,12 @@
-#include "Common/StdInc.h"
+#include "../Common/StdInc.h"
 #include "Motor.h"
-#include "Device/PWM.h"
+#include "../Device/PWM.h"
 
+void MotorDrive(State_t* NextMotorState){
+    
+}
 
 void SetToNext(State_t* NowMotorState,State_t *NextMotorState,State_t*TargetMotorState){
-    char cnt;
     if(TargetMotorState->direction != NowMotorState->direction){
         __delay_us(20);
         NextMotorState->direction = TargetMotorState->direction;

@@ -8,6 +8,7 @@
 #ifndef I2C_H
 #define	I2C_H
 
+#include "../../Common/Struct.h"
 
 #define SCL_PIN TRISBbits.TRISB8
 #define SDA_PIN TRISBbits.TRISB9
@@ -64,16 +65,6 @@
 #endif
 #endif
 
-
-typedef struct myID {
-    unsigned    ID:4;
-    union{
-        unsigned    ID0:1;
-        unsigned    ID1:1;
-        unsigned    ID2:1;
-        unsigned    ID3:1;
-    };
-} Address_t;
 
 //typedef struct myID Address;
 
