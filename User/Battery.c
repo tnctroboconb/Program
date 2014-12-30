@@ -10,6 +10,7 @@ void UseThis(BatteryData_t* Battery){
             else
                 Battery->Enable = 1;
             MAIN_BATTERY = Battery->Enable;
+            SUB_BATTERY = 0;
             break;
         case 1:
             if(Battery->Percent < 5)

@@ -54,7 +54,7 @@ void inline Res_To_Volt(BatteryData_t* Battery){
 }
 
 void inline Volt_To_Perce(BatteryData_t* Battery){
-    if(Battery->tmp > Battery->Voltage){
+    if(Battery->tmp < Battery->Voltage){
         Battery->Voltage = Battery->tmp;
         Battery->Percent = (((4.2 * CELLS) / Battery->Voltage) * 100);
     }else

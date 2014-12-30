@@ -8,16 +8,10 @@
 #ifndef EEPROM_H
 #define	EEPROM_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
+#include "../Common/TypeDef.h"
 
-
-
-
-#ifdef	__cplusplus
-}
-#endif
+void InitEEP();
+void WriteToEEP(CINT8);
+void ReadFromEEP(CINT8*);
 
 #endif	/* EEPROM_H */
-

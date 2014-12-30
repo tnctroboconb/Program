@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c EEPROM.c User/Motor.c User/Battery.c main.c Interrupt.c
+SOURCEFILES_QUOTED_IF_SPACED=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c User/Motor.c User/Battery.c main.c Interrupt.c Device/EEPROM.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/EEPROM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o.d ${OBJECTDIR}/Device/Serial/I2C.o.d ${OBJECTDIR}/Device/Serial/UART.o.d ${OBJECTDIR}/Device/Serial/SPI.o.d ${OBJECTDIR}/Device/Init.o.d ${OBJECTDIR}/Device/PWM.o.d ${OBJECTDIR}/EEPROM.o.d ${OBJECTDIR}/User/Motor.o.d ${OBJECTDIR}/User/Battery.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Interrupt.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o ${OBJECTDIR}/Device/EEPROM.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o.d ${OBJECTDIR}/Device/Serial/I2C.o.d ${OBJECTDIR}/Device/Serial/UART.o.d ${OBJECTDIR}/Device/Serial/SPI.o.d ${OBJECTDIR}/Device/Init.o.d ${OBJECTDIR}/Device/PWM.o.d ${OBJECTDIR}/User/Motor.o.d ${OBJECTDIR}/User/Battery.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Interrupt.o.d ${OBJECTDIR}/Device/EEPROM.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/EEPROM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o
+OBJECTFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o ${OBJECTDIR}/Device/EEPROM.o
 
 # Source Files
-SOURCEFILES=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c EEPROM.c User/Motor.c User/Battery.c main.c Interrupt.c
+SOURCEFILES=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c User/Motor.c User/Battery.c main.c Interrupt.c Device/EEPROM.c
 
 
 CFLAGS=
@@ -124,13 +124,6 @@ ${OBJECTDIR}/Device/PWM.o: Device/PWM.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/PWM.c  -o ${OBJECTDIR}/Device/PWM.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/PWM.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Device/PWM.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/EEPROM.o: EEPROM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR} 
-	@${RM} ${OBJECTDIR}/EEPROM.o.d 
-	@${RM} ${OBJECTDIR}/EEPROM.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  EEPROM.c  -o ${OBJECTDIR}/EEPROM.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/EEPROM.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/EEPROM.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/User/Motor.o: User/Motor.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/User 
 	@${RM} ${OBJECTDIR}/User/Motor.o.d 
@@ -158,6 +151,13 @@ ${OBJECTDIR}/Interrupt.o: Interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Interrupt.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Interrupt.c  -o ${OBJECTDIR}/Interrupt.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Interrupt.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Interrupt.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Device/EEPROM.o: Device/EEPROM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Device 
+	@${RM} ${OBJECTDIR}/Device/EEPROM.o.d 
+	@${RM} ${OBJECTDIR}/Device/EEPROM.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/EEPROM.c  -o ${OBJECTDIR}/Device/EEPROM.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/EEPROM.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Device/EEPROM.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 else
 ${OBJECTDIR}/Device/Convert/AnaToDigi.o: Device/Convert/AnaToDigi.c  nbproject/Makefile-${CND_CONF}.mk
@@ -202,13 +202,6 @@ ${OBJECTDIR}/Device/PWM.o: Device/PWM.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/PWM.c  -o ${OBJECTDIR}/Device/PWM.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/PWM.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Device/PWM.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/EEPROM.o: EEPROM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR} 
-	@${RM} ${OBJECTDIR}/EEPROM.o.d 
-	@${RM} ${OBJECTDIR}/EEPROM.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  EEPROM.c  -o ${OBJECTDIR}/EEPROM.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/EEPROM.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/EEPROM.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/User/Motor.o: User/Motor.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/User 
 	@${RM} ${OBJECTDIR}/User/Motor.o.d 
@@ -236,6 +229,13 @@ ${OBJECTDIR}/Interrupt.o: Interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Interrupt.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Interrupt.c  -o ${OBJECTDIR}/Interrupt.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Interrupt.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Interrupt.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Device/EEPROM.o: Device/EEPROM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Device 
+	@${RM} ${OBJECTDIR}/Device/EEPROM.o.d 
+	@${RM} ${OBJECTDIR}/Device/EEPROM.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Device/EEPROM.c  -o ${OBJECTDIR}/Device/EEPROM.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Device/EEPROM.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Device/EEPROM.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

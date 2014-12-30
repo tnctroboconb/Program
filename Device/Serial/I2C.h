@@ -20,7 +20,7 @@
 #define INTERRUPT (1)
 #define ENABLE (1)
 #define GCALL (0)
-#define BAUD 400KHz
+#define DATA_LATE 400KHz
 
 #if (MASTER == SLAVE)
 #error MASTER and SLAVE mode are selected on same time
@@ -65,15 +65,12 @@
 #endif
 #endif
 
-
-//typedef struct myID Address;
-
 void Init_I2C(Address_t*);
-void Start_I2C();
-void Restart_I2C();
+void Start_I2C(Address_t*);
+void Restart_I2C(Address_t*);
 void IdleI2C();
-void Send_Data();
-void Get_Data();
+void Send_Data(Address_t*,INT8);
+void Get_Data(State_t*);
 void GetID(Address_t*);
 
 #endif	/* I2C_H */

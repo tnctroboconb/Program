@@ -27,11 +27,11 @@ Command:
   build/default/production/Device/Serial/SPI.o \
   build/default/production/Device/Init.o \
   build/default/production/Device/PWM.o \
-  build/default/production/EEPROM.o \
   build/default/production/User/Motor.o \
   build/default/production/User/Battery.o \
   build/default/production/main.o \
   build/default/production/Interrupt.o \
+  build/default/production/Device/EEPROM.o \
   --defsym=__MPLAB_BUILD=1 \
   -Tp24F08KL200.gld.00 \
   --stack=16 \
@@ -64,9 +64,9 @@ Archive member included because of file (symbol)
 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libm-elf.a(divsf3.eo)
                               build/default/production/Device/Convert/AnaToDigi.o (___divsf3)
 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libm-elf.a(feqltle.eo)
-                              build/default/production/User/Battery.o (___ltsf2)
+                              build/default/production/Device/Convert/AnaToDigi.o (___ltsf2)
 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libm-elf.a(fgtge.eo)
-                              build/default/production/Device/Convert/AnaToDigi.o (___gtsf2)
+                              build/default/production/User/Battery.o (___gesf2)
 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libm-elf.a(floatunsisf.eo)
                               build/default/production/Device/Convert/AnaToDigi.o (___floatunsisf)
 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libm-elf.a(fpack.eo)
@@ -90,12 +90,12 @@ Program Memory  [Origin = 0x200, Length = 0x1400]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x2d0           0x438  (1080)
-.text                        0x4d0               0x3cc           0x5b2  (1458)
-.init.delay32                0x89c                0x1c            0x2a  (42)
-.text                        0x8b8                 0xa             0xf  (15)
-.dinit                       0x8c2                 0x2             0x3  (3)
+.text                        0x4d0               0x3ce           0x5b5  (1461)
+.init.delay32                0x89e                0x1c            0x2a  (42)
+.text                        0x8ba                 0xa             0xf  (15)
+.dinit                       0x8c4                 0x2             0x3  (3)
 
-                     Total program memory used (bytes):          0xa26  (2598) 33%
+                     Total program memory used (bytes):          0xa29  (2601) 33%
 
 
 Data Memory  [Origin = 0x800, Length = 0x200]
@@ -149,35 +149,35 @@ External Symbols in Program Memory (by address):
                   0x000638                  _IdleI2C
                   0x000670                  _GetID
                   0x0006e0                  _UseThis
-                  0x0007a8                  _MotorDrive
-                  0x0007b0                  _SetToNext
-                  0x00084e                  _GetData
-                  0x00085e                  _Init_Device
-                  0x000868                  _Init_Frequency
-                  0x00087e                  _Init_IO
-                  0x00089c                  ___delay32
-                  0x0008b8                  _main
+                  0x0007aa                  _MotorDrive
+                  0x0007b2                  _SetToNext
+                  0x000850                  _GetData
+                  0x000860                  _Init_Device
+                  0x00086a                  _Init_Frequency
+                  0x000880                  _Init_IO
+                  0x00089e                  ___delay32
+                  0x0008ba                  _main
 
 External Symbols in Program Memory (by name):
 
                   0x0004d0                  _ADInit
                   0x00051e                  _BeforConvert
                   0x000550                  _Convert
-                  0x00084e                  _GetData
+                  0x000850                  _GetData
                   0x000670                  _GetID
                   0x000638                  _IdleI2C
-                  0x00085e                  _Init_Device
-                  0x000868                  _Init_Frequency
+                  0x000860                  _Init_Device
+                  0x00086a                  _Init_Frequency
                   0x000600                  _Init_I2C
-                  0x00087e                  _Init_IO
-                  0x0007a8                  _MotorDrive
+                  0x000880                  _Init_IO
+                  0x0007aa                  _MotorDrive
                   0x000576                  _Res_To_Volt
-                  0x0007b0                  _SetToNext
+                  0x0007b2                  _SetToNext
                   0x00053e                  _StartConvert
                   0x0006e0                  _UseThis
                   0x0005a2                  _Volt_To_Perce
                   0x00029a                  __DefaultInterrupt
-                  0x00089c                  ___delay32
+                  0x00089e                  ___delay32
                   0x00029e                  ___divsf3
                   0x000322                  ___eqsf2
                   0x000448                  ___floatundisf
@@ -198,7 +198,7 @@ External Symbols in Program Memory (by name):
                   0x00037a                  __funpack2
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0008b8                  _main
+                  0x0008ba                  _main
 
 Memory Configuration
 
@@ -226,11 +226,11 @@ LOAD build/default/production/Device/Serial/UART.o
 LOAD build/default/production/Device/Serial/SPI.o
 LOAD build/default/production/Device/Init.o
 LOAD build/default/production/Device/PWM.o
-LOAD build/default/production/EEPROM.o
 LOAD build/default/production/User/Motor.o
 LOAD build/default/production/User/Battery.o
 LOAD build/default/production/main.o
 LOAD build/default/production/Interrupt.o
+LOAD build/default/production/Device/EEPROM.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD /Applications/microchip/xc16/v1.23/bin/bin/../../lib/PIC24F/libpPIC24Fxxx-elf.a
 LOAD /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libfx-elf.a
@@ -337,17 +337,17 @@ __FICD
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x1d97
+.debug_info       0x000000       0x1d9e
  *(.debug_info)
  .debug_info      0x000000        0x931 build/default/production/Device/Convert/AnaToDigi.o
  .debug_info      0x000931        0x918 build/default/production/Device/Serial/I2C.o
  .debug_info      0x001249         0xd8 build/default/production/Device/Serial/SPI.o
  .debug_info      0x001321        0x266 build/default/production/Device/Init.o
- .debug_info      0x001587         0xcd build/default/production/EEPROM.o
- .debug_info      0x001654        0x266 build/default/production/User/Motor.o
- .debug_info      0x0018ba        0x2b0 build/default/production/User/Battery.o
- .debug_info      0x001b6a        0x123 build/default/production/main.o
- .debug_info      0x001c8d        0x10a build/default/production/Interrupt.o
+ .debug_info      0x001587        0x266 build/default/production/User/Motor.o
+ .debug_info      0x0017ed        0x2b0 build/default/production/User/Battery.o
+ .debug_info      0x001a9d        0x123 build/default/production/main.o
+ .debug_info      0x001bc0        0x10a build/default/production/Interrupt.o
+ .debug_info      0x001cca         0xd4 build/default/production/Device/EEPROM.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x4e3
@@ -358,13 +358,13 @@ __FICD
  .debug_abbrev    0x000261         0x1f build/default/production/Device/Serial/SPI.o
  .debug_abbrev    0x000280         0x4a build/default/production/Device/Init.o
  .debug_abbrev    0x0002ca          0x1 build/default/production/Device/PWM.o
- .debug_abbrev    0x0002cb         0x1f build/default/production/EEPROM.o
- .debug_abbrev    0x0002ea         0xcf build/default/production/User/Motor.o
- .debug_abbrev    0x0003b9         0xd7 build/default/production/User/Battery.o
- .debug_abbrev    0x000490         0x34 build/default/production/main.o
- .debug_abbrev    0x0004c4         0x1f build/default/production/Interrupt.o
+ .debug_abbrev    0x0002cb         0xcf build/default/production/User/Motor.o
+ .debug_abbrev    0x00039a         0xd7 build/default/production/User/Battery.o
+ .debug_abbrev    0x000471         0x34 build/default/production/main.o
+ .debug_abbrev    0x0004a5         0x1f build/default/production/Interrupt.o
+ .debug_abbrev    0x0004c4         0x1f build/default/production/Device/EEPROM.o
 
-.debug_line       0x000000        0x931
+.debug_line       0x000000        0x939
  *(.debug_line)
  .debug_line      0x000000        0x288 build/default/production/Device/Convert/AnaToDigi.o
  .debug_line      0x000288        0x1ea build/default/production/Device/Serial/I2C.o
@@ -372,11 +372,11 @@ __FICD
  .debug_line      0x000496         0x24 build/default/production/Device/Serial/SPI.o
  .debug_line      0x0004ba        0x136 build/default/production/Device/Init.o
  .debug_line      0x0005f0         0x24 build/default/production/Device/PWM.o
- .debug_line      0x000614         0x24 build/default/production/EEPROM.o
- .debug_line      0x000638        0x145 build/default/production/User/Motor.o
- .debug_line      0x00077d        0x140 build/default/production/User/Battery.o
- .debug_line      0x0008bd         0x50 build/default/production/main.o
- .debug_line      0x00090d         0x24 build/default/production/Interrupt.o
+ .debug_line      0x000614        0x145 build/default/production/User/Motor.o
+ .debug_line      0x000759        0x148 build/default/production/User/Battery.o
+ .debug_line      0x0008a1         0x50 build/default/production/main.o
+ .debug_line      0x0008f1         0x24 build/default/production/Interrupt.o
+ .debug_line      0x000915         0x24 build/default/production/Device/EEPROM.o
 
 .debug_frame      0x000000        0x188
  *(.debug_frame)
@@ -1066,15 +1066,15 @@ LOAD data_init
  .debug_pubtypes
                   0x000256         0x12 build/default/production/Device/Init.o
  .debug_pubtypes
-                  0x000268         0x12 build/default/production/EEPROM.o
+                  0x000268         0x36 build/default/production/User/Motor.o
  .debug_pubtypes
-                  0x00027a         0x36 build/default/production/User/Motor.o
+                  0x00029e         0x63 build/default/production/User/Battery.o
  .debug_pubtypes
-                  0x0002b0         0x63 build/default/production/User/Battery.o
+                  0x000301         0x12 build/default/production/main.o
  .debug_pubtypes
-                  0x000313         0x12 build/default/production/main.o
+                  0x000313         0x12 build/default/production/Interrupt.o
  .debug_pubtypes
-                  0x000325         0x12 build/default/production/Interrupt.o
+                  0x000325         0x12 build/default/production/Device/EEPROM.o
 
 __c30_signature
                   0x000338         0x96
@@ -1091,15 +1091,15 @@ __c30_signature
  __c30_signature
                   0x000356          0x6 build/default/production/Device/PWM.o
  __c30_signature
-                  0x00035c          0x6 build/default/production/EEPROM.o
+                  0x00035c          0x6 build/default/production/User/Motor.o
  __c30_signature
-                  0x000362          0x6 build/default/production/User/Motor.o
+                  0x000362          0x6 build/default/production/User/Battery.o
  __c30_signature
-                  0x000368          0x6 build/default/production/User/Battery.o
+                  0x000368          0x6 build/default/production/main.o
  __c30_signature
-                  0x00036e          0x6 build/default/production/main.o
+                  0x00036e          0x6 build/default/production/Interrupt.o
  __c30_signature
-                  0x000374          0x6 build/default/production/Interrupt.o
+                  0x000374          0x6 build/default/production/Device/EEPROM.o
  __c30_signature
                   0x00037a          0x6 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(crt0_standard.o)
  __c30_signature
@@ -1151,7 +1151,7 @@ __c30_signature
 .config_BSS       0xf80000          0x2
  .config_BSS      0xf80000          0x2 build/default/production/main.o
 
-.text             0x0004d0        0x3cc
+.text             0x0004d0        0x3ce
  .text            0x0004d0        0x130 build/default/production/Device/Convert/AnaToDigi.o
                   0x0004d0                  _ADInit
                   0x00051e                  _BeforConvert
@@ -1163,24 +1163,24 @@ __c30_signature
                   0x000600                  _Init_I2C
                   0x000638                  _IdleI2C
                   0x000670                  _GetID
- .text            0x0006e0         0xc8 build/default/production/User/Battery.o
+ .text            0x0006e0         0xca build/default/production/User/Battery.o
                   0x0006e0                  _UseThis
- .text            0x0007a8         0xb6 build/default/production/User/Motor.o
-                  0x0007a8                  _MotorDrive
-                  0x0007b0                  _SetToNext
-                  0x00084e                  _GetData
- .text            0x00085e         0x3e build/default/production/Device/Init.o
-                  0x00085e                  _Init_Device
-                  0x000868                  _Init_Frequency
-                  0x00087e                  _Init_IO
+ .text            0x0007aa         0xb6 build/default/production/User/Motor.o
+                  0x0007aa                  _MotorDrive
+                  0x0007b2                  _SetToNext
+                  0x000850                  _GetData
+ .text            0x000860         0x3e build/default/production/Device/Init.o
+                  0x000860                  _Init_Device
+                  0x00086a                  _Init_Frequency
+                  0x000880                  _Init_IO
 
-.init.delay32     0x00089c         0x1c
- .init.delay32    0x00089c         0x1c /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(delay32.eo)
-                  0x00089c                  ___delay32
+.init.delay32     0x00089e         0x1c
+ .init.delay32    0x00089e         0x1c /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(delay32.eo)
+                  0x00089e                  ___delay32
 
-.text             0x0008b8          0xa
- .text            0x0008b8          0xa build/default/production/main.o
-                  0x0008b8                  _main
+.text             0x0008ba          0xa
+ .text            0x0008ba          0xa build/default/production/main.o
+                  0x0008ba                  _main
 
-.dinit            0x0008c2          0x2
- .dinit           0x0008c2          0x2 data_init
+.dinit            0x0008c4          0x2
+ .dinit           0x0008c4          0x2 data_init

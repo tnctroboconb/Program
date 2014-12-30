@@ -51,7 +51,7 @@
 #endif
 
 #if USE_EEPROM == ENABLE
-#include "../EEPROM.h"
+#include "../Device/EEPROM.h"
 #endif
 
 #if USE_MOTOR == ENABLE
