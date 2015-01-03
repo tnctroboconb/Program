@@ -20,7 +20,7 @@
 #define DISABLE 0
 
 #define USE_USART       DISABLE
-#define USE_I2C         DISABLE
+#define USE_I2C         ENABLE
 #define USE_SPI         DISABLE
 #define USE_PWM         DISABLE
 #define USE_ADCONVERT   DISABLE

@@ -30,13 +30,24 @@ typedef struct myID {
     };
 } Address_t;
 
-
+/*
+ MotorDataのデータ構成
+ ----------------------------------------
+ |bit7|bit6|bit5|bit4|bit3|bit2|bit1|bit0|
+ ----------------------------------------
+ |方向 |番号 |      50%からの差分      |符号|
+ ----------------------------------------
+ */
 typedef struct MotorData{
     USIGN    state:8;
     union{
-        USIGN    duty:7;
-        USIGN    direction:1;
+        USIGN   plusminus:1;
+        USIGN   duty:5;
+        USIGN   number:1;
+        USIGN   direction:1;
     };
 } State_t;
+
+extern State_t ReceiveData[2];
 
 #endif	/* STRUCT_H */

@@ -8,8 +8,6 @@
 #ifndef TYPEDEF_H
 #define	TYPEDEF_H
 
-#include "StdInc.h"
-
 typedef signed char INT8;
 typedef const signed char CINT8;
 typedef unsigned char UINT8;

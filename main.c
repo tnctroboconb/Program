@@ -20,5 +20,5 @@
 #endif
 
 int main(){
-    Init_Device();
+
 }

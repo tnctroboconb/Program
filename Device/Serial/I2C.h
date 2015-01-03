@@ -18,7 +18,7 @@
 #define HI_SPEED (1)
 #define SEVEN_BIT (1)
 #define INTERRUPT (1)
-#define ENABLE (1)
+#define EN (1)
 #define GCALL (0)
 #define DATA_LATE 400KHz
 
@@ -31,16 +31,16 @@
 #define BAUD 100KHz
 #endif
 
-#if (ENABLE != 1)
-#error I2C.h is included. But this module is disabled.
-#endif
-
 #if (HI_SPEED != 1)
 #warning I2C is used in low speed mode
 #undef HI_SPEED
 #define HI_SPEED 0
 #undef BAUD
 #define BAUD 100KHz
+#endif
+
+#if (MASTER == 1)
+#define GENERATE ((FCY / (2 * DATA_LATE)) - 1)
 #endif
 
 #if ((INTERRUPT != 1) && (INTERRUPT != 0))
@@ -72,5 +72,7 @@ void IdleI2C();
 void Send_Data(Address_t*,INT8);
 void Get_Data(State_t*);
 void GetID(Address_t*);
+void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void);
+
 
 #endif	/* I2C_H */
