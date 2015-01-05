@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c Device/EEPROM.c User/Motor.c User/Battery.c main.c Interrupt.c User/DUALSHOCK2.c
+SOURCEFILES_QUOTED_IF_SPACED=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c Device/EEPROM.c User/Motor.c User/Battery.c main.c Interrupt.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/Device/EEPROM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o ${OBJECTDIR}/User/DUALSHOCK2.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o.d ${OBJECTDIR}/Device/Serial/I2C.o.d ${OBJECTDIR}/Device/Serial/UART.o.d ${OBJECTDIR}/Device/Serial/SPI.o.d ${OBJECTDIR}/Device/Init.o.d ${OBJECTDIR}/Device/PWM.o.d ${OBJECTDIR}/Device/EEPROM.o.d ${OBJECTDIR}/User/Motor.o.d ${OBJECTDIR}/User/Battery.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Interrupt.o.d ${OBJECTDIR}/User/DUALSHOCK2.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/Device/EEPROM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o.d ${OBJECTDIR}/Device/Serial/I2C.o.d ${OBJECTDIR}/Device/Serial/UART.o.d ${OBJECTDIR}/Device/Serial/SPI.o.d ${OBJECTDIR}/Device/Init.o.d ${OBJECTDIR}/Device/PWM.o.d ${OBJECTDIR}/Device/EEPROM.o.d ${OBJECTDIR}/User/Motor.o.d ${OBJECTDIR}/User/Battery.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Interrupt.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/Device/EEPROM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o ${OBJECTDIR}/User/DUALSHOCK2.o
+OBJECTFILES=${OBJECTDIR}/Device/Convert/AnaToDigi.o ${OBJECTDIR}/Device/Serial/I2C.o ${OBJECTDIR}/Device/Serial/UART.o ${OBJECTDIR}/Device/Serial/SPI.o ${OBJECTDIR}/Device/Init.o ${OBJECTDIR}/Device/PWM.o ${OBJECTDIR}/Device/EEPROM.o ${OBJECTDIR}/User/Motor.o ${OBJECTDIR}/User/Battery.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Interrupt.o
 
 # Source Files
-SOURCEFILES=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c Device/EEPROM.c User/Motor.c User/Battery.c main.c Interrupt.c User/DUALSHOCK2.c
+SOURCEFILES=Device/Convert/AnaToDigi.c Device/Serial/I2C.c Device/Serial/UART.c Device/Serial/SPI.c Device/Init.c Device/PWM.c Device/EEPROM.c User/Motor.c User/Battery.c main.c Interrupt.c
 
 
 CFLAGS=
@@ -159,13 +159,6 @@ ${OBJECTDIR}/Interrupt.o: Interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Interrupt.c  -o ${OBJECTDIR}/Interrupt.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Interrupt.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Interrupt.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/User/DUALSHOCK2.o: User/DUALSHOCK2.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/User 
-	@${RM} ${OBJECTDIR}/User/DUALSHOCK2.o.d 
-	@${RM} ${OBJECTDIR}/User/DUALSHOCK2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  User/DUALSHOCK2.c  -o ${OBJECTDIR}/User/DUALSHOCK2.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/User/DUALSHOCK2.o.d"      -g -D__DEBUG     -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/User/DUALSHOCK2.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 else
 ${OBJECTDIR}/Device/Convert/AnaToDigi.o: Device/Convert/AnaToDigi.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Device/Convert 
@@ -243,13 +236,6 @@ ${OBJECTDIR}/Interrupt.o: Interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Interrupt.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Interrupt.c  -o ${OBJECTDIR}/Interrupt.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Interrupt.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Interrupt.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
-${OBJECTDIR}/User/DUALSHOCK2.o: User/DUALSHOCK2.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/User 
-	@${RM} ${OBJECTDIR}/User/DUALSHOCK2.o.d 
-	@${RM} ${OBJECTDIR}/User/DUALSHOCK2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  User/DUALSHOCK2.c  -o ${OBJECTDIR}/User/DUALSHOCK2.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/User/DUALSHOCK2.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/User/DUALSHOCK2.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 
