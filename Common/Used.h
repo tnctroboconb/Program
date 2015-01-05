@@ -27,6 +27,7 @@
 #define USE_EEPROM      DISABLE
 #define USE_MOTOR       DISABLE
 #define USE_BATTERY     DISABLE
+#define USE_DUALSHOCK2  DISABLE
 
 #include "../Device/Init.h"
 
@@ -60,6 +61,10 @@
 
 #if USE_BATTERY == ENABLE
 #include "../User/Battery.h"
+#endif
+
+#if USE_DUALSHOCK2 == ENABLE
+#include "../User/DUALSHOCK2.h"
 #endif
 
 #endif	/* USED_H */

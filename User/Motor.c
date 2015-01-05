@@ -2,6 +2,8 @@
 #include "Motor.h"
 #include "../Device/PWM.h"
 
+#if USE_MOTOR == ENABLE
+
 void MotorDrive(State_t* NextMotorState){
     
 }
@@ -19,5 +21,8 @@ void SetToNext(State_t* NowMotorState,State_t *NextMotorState,State_t*TargetMoto
 }
 
 void GetData(State_t* NextMotorState){
-    NextMotorState->state = SSP1BUF;
+    NextMotorState[0] = ReceiveData[0];
+    NextMotorState[1] = ReceiveData[1];
 }
+
+#endif

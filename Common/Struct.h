@@ -20,13 +20,13 @@ typedef struct Battery{
 } BatteryData_t;
 
 
-typedef struct myID {
-    USIGN    ID:4;
+typedef struct myID{
     union{
+        USIGN    ID:4;
         USIGN    ID0:1;
         USIGN    ID1:1;
         USIGN    ID2:1;
-        USIGN    ID3:1;
+        USIGN    ID3:1; 
     };
 } Address_t;
 
@@ -39,13 +39,10 @@ typedef struct myID {
  ----------------------------------------
  */
 typedef struct MotorData{
-    USIGN    state:8;
-    union{
         USIGN   plusminus:1;
         USIGN   duty:5;
         USIGN   number:1;
         USIGN   direction:1;
-    };
 } State_t;
 
 extern State_t ReceiveData[2];

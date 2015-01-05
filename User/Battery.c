@@ -1,5 +1,7 @@
+#include "../Common/StdInc.h"
 #include "Battery.h"
 
+#if USE_BATTERY == ENABLE
 
 
 void UseThis(BatteryData_t* Battery){
@@ -21,3 +23,5 @@ void UseThis(BatteryData_t* Battery){
             break;
     }
 }
+
+#endif

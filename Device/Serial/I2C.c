@@ -53,6 +53,7 @@ void GetID(Address_t* Addr){
 
 void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void){
     int dummy;
+
     if(!SSP1STATbits.R_W){
         if(!SSP1STATbits.D_A){
             dummy = SSP1BUF;

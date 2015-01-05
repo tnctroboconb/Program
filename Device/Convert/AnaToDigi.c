@@ -2,7 +2,7 @@
 #include "AnaToDigi.h"
 #include "../../User/Battery.h"
 
-#if CONVERT_ENABLE == 1
+#if USE_ADCONVERT == ENABLE 
 
 void ADInit(){
     //AD1CON1 Initialization
