@@ -10,6 +10,7 @@
 
 #include "TypeDef.h"
 
+
 typedef struct Battery{
     float       Voltage;
     float       Percent;
@@ -18,7 +19,6 @@ typedef struct Battery{
     USIGN       Enable:1;
     USIGN       ID:1;
 } BatteryData_t;
-
 
 typedef struct myID{
     union{
@@ -35,16 +35,15 @@ typedef struct myID{
  ----------------------------------------
  |bit7|bit6|bit5|bit4|bit3|bit2|bit1|bit0|
  ----------------------------------------
- |方向 |番号 |      50%からの差分      |符号|
+ |　　状態  |      50%からの差分       |符号|
  ----------------------------------------
  */
 typedef struct MotorData{
-        USIGN   plusminus:1;
-        USIGN   duty:5;
-        USIGN   number:1;
-        USIGN   direction:1;
+        USIGN  plusminus:1;
+        USIGN  duty:5;
+        USIGN  direction:2;
 } State_t;
 
-extern State_t ReceiveData[2];
+extern State_t ReceiveData;
 
 #endif	/* STRUCT_H */

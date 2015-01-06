@@ -1,7 +1,7 @@
 #include "../../Common/StdInc.h"
 #include "I2C.h"
 
-State_t ReceiveData[2];
+State_t ReceiveData;
 
 #if USE_I2C == ENABLE
 
@@ -59,10 +59,10 @@ void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void){
             dummy = SSP1BUF;
             IdleI2C();
         }else{
-            ReceiveData[((SSP1BUF & 0x40) >> 6)].plusminus = ( SSP1BUF & 0x01);
-            ReceiveData[((SSP1BUF & 0x40) >> 6)].duty      = ((SSP1BUF & 0x3E) >> 1);
-            ReceiveData[((SSP1BUF & 0x40) >> 6)].number    = ((SSP1BUF & 0x40) >> 6);
-            ReceiveData[((SSP1BUF & 0x40) >> 6)].direction = ((SSP1BUF & 0x80) >> 7);
+            ReceiveData.plusminus = ( SSP1BUF & 0x01);
+            ReceiveData.duty      = ((SSP1BUF & 0x3E) >> 1);
+            //ReceiveData[((SSP1BUF & 0x40) >> 6)].number    = ((SSP1BUF & 0x40) >> 6);
+            ReceiveData.direction = ((SSP1BUF & 0xC0) >> 6);
         }
     }
 }

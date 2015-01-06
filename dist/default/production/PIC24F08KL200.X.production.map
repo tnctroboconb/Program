@@ -32,7 +32,6 @@ Command:
   build/default/production/User/Battery.o \
   build/default/production/main.o \
   build/default/production/Interrupt.o \
-  build/default/production/User/DUALSHOCK2.o \
   --defsym=__MPLAB_BUILD=1 \
   -Tp24F08KL200.gld.00 \
   --stack=16 \
@@ -67,19 +66,19 @@ Program Memory  [Origin = 0x200, Length = 0x1400]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0x9e            0xed  (237)
-.text                        0x29e               0x204           0x306  (774)
-.dinit                       0x4a2                 0x8             0xc  (12)
+.text                        0x29e               0x1b0           0x288  (648)
+.dinit                       0x44e                 0x8             0xc  (12)
 
-                     Total program memory used (bytes):          0x3ff  (1023) 13%
+                     Total program memory used (bytes):          0x381  (897) 11%
 
 
 Data Memory  [Origin = 0x800, Length = 0x200]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0             0x4  (4)
+.nbss                        0x800                   0             0x2  (2)
 
-                        Total data memory used (bytes):            0x4  (4) <1%
+                        Total data memory used (bytes):            0x2  (2) <1%
 
 
 Dynamic Memory Usage
@@ -87,9 +86,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x804                               0x1fc  (508)
+stack                        0x802                               0x1fe  (510)
 
-                        Maximum dynamic memory (bytes):          0x1fc  (508)
+                        Maximum dynamic memory (bytes):          0x1fe  (510)
 
 
 External Symbols in Data Memory (by address):
@@ -111,26 +110,26 @@ External Symbols in Program Memory (by address):
                   0x0002dc                  _IdleI2C
                   0x000314                  _GetID
                   0x000384                  __MSSP1Interrupt
-                  0x00045c                  _Init_Device
-                  0x000466                  _Init_Frequency
-                  0x00047c                  _Init_IO
-                  0x00049a                  _main
+                  0x000408                  _Init_Device
+                  0x000412                  _Init_Frequency
+                  0x000428                  _Init_IO
+                  0x000446                  _main
 
 External Symbols in Program Memory (by name):
 
                   0x000314                  _GetID
                   0x0002dc                  _IdleI2C
-                  0x00045c                  _Init_Device
-                  0x000466                  _Init_Frequency
+                  0x000408                  _Init_Device
+                  0x000412                  _Init_Frequency
                   0x00029e                  _Init_I2C
-                  0x00047c                  _Init_IO
+                  0x000428                  _Init_IO
                   0x00029a                  __DefaultInterrupt
                   0x000384                  __MSSP1Interrupt
                   0x00023c                  __data_init
                   0x00023c                  __data_init_standard
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00049a                  _main
+                  0x000446                  _main
 
 Memory Configuration
 
@@ -163,7 +162,6 @@ LOAD build/default/production/User/Motor.o
 LOAD build/default/production/User/Battery.o
 LOAD build/default/production/main.o
 LOAD build/default/production/Interrupt.o
-LOAD build/default/production/User/DUALSHOCK2.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD /Applications/microchip/xc16/v1.23/bin/bin/../../lib/PIC24F/libpPIC24Fxxx-elf.a
 LOAD /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libfx-elf.a
@@ -234,50 +232,48 @@ __FICD
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x1655
+.debug_info       0x000000       0x1631
  *(.debug_info)
  .debug_info      0x000000        0x119 build/default/production/Device/Convert/AnaToDigi.o
- .debug_info      0x000119        0xa19 build/default/production/Device/Serial/I2C.o
- .debug_info      0x000b32        0x113 build/default/production/Device/Serial/UART.o
- .debug_info      0x000c45        0x112 build/default/production/Device/Serial/SPI.o
- .debug_info      0x000d57        0x2a0 build/default/production/Device/Init.o
- .debug_info      0x000ff7        0x10b build/default/production/Device/PWM.o
- .debug_info      0x001102        0x10e build/default/production/Device/EEPROM.o
- .debug_info      0x001210        0x10b build/default/production/User/Motor.o
- .debug_info      0x00131b        0x10d build/default/production/User/Battery.o
- .debug_info      0x001428        0x123 build/default/production/main.o
- .debug_info      0x00154b        0x10a build/default/production/Interrupt.o
+ .debug_info      0x000119        0x9f5 build/default/production/Device/Serial/I2C.o
+ .debug_info      0x000b0e        0x113 build/default/production/Device/Serial/UART.o
+ .debug_info      0x000c21        0x112 build/default/production/Device/Serial/SPI.o
+ .debug_info      0x000d33        0x2a0 build/default/production/Device/Init.o
+ .debug_info      0x000fd3        0x10b build/default/production/Device/PWM.o
+ .debug_info      0x0010de        0x10e build/default/production/Device/EEPROM.o
+ .debug_info      0x0011ec        0x10b build/default/production/User/Motor.o
+ .debug_info      0x0012f7        0x10d build/default/production/User/Battery.o
+ .debug_info      0x001404        0x123 build/default/production/main.o
+ .debug_info      0x001527        0x10a build/default/production/Interrupt.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x2f0
+.debug_abbrev     0x000000        0x2dd
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x1f build/default/production/Device/Convert/AnaToDigi.o
- .debug_abbrev    0x00001f        0x179 build/default/production/Device/Serial/I2C.o
- .debug_abbrev    0x000198         0x1f build/default/production/Device/Serial/UART.o
- .debug_abbrev    0x0001b7         0x1f build/default/production/Device/Serial/SPI.o
- .debug_abbrev    0x0001d6         0x4a build/default/production/Device/Init.o
- .debug_abbrev    0x000220         0x1f build/default/production/Device/PWM.o
- .debug_abbrev    0x00023f         0x1f build/default/production/Device/EEPROM.o
- .debug_abbrev    0x00025e         0x1f build/default/production/User/Motor.o
- .debug_abbrev    0x00027d         0x1f build/default/production/User/Battery.o
- .debug_abbrev    0x00029c         0x34 build/default/production/main.o
- .debug_abbrev    0x0002d0         0x1f build/default/production/Interrupt.o
- .debug_abbrev    0x0002ef          0x1 build/default/production/User/DUALSHOCK2.o
+ .debug_abbrev    0x00001f        0x167 build/default/production/Device/Serial/I2C.o
+ .debug_abbrev    0x000186         0x1f build/default/production/Device/Serial/UART.o
+ .debug_abbrev    0x0001a5         0x1f build/default/production/Device/Serial/SPI.o
+ .debug_abbrev    0x0001c4         0x4a build/default/production/Device/Init.o
+ .debug_abbrev    0x00020e         0x1f build/default/production/Device/PWM.o
+ .debug_abbrev    0x00022d         0x1f build/default/production/Device/EEPROM.o
+ .debug_abbrev    0x00024c         0x1f build/default/production/User/Motor.o
+ .debug_abbrev    0x00026b         0x1f build/default/production/User/Battery.o
+ .debug_abbrev    0x00028a         0x34 build/default/production/main.o
+ .debug_abbrev    0x0002be         0x1f build/default/production/Interrupt.o
 
-.debug_line       0x000000        0x512
+.debug_line       0x000000        0x4e6
  *(.debug_line)
  .debug_line      0x000000         0x24 build/default/production/Device/Convert/AnaToDigi.o
- .debug_line      0x000024        0x250 build/default/production/Device/Serial/I2C.o
- .debug_line      0x000274         0x24 build/default/production/Device/Serial/UART.o
- .debug_line      0x000298         0x24 build/default/production/Device/Serial/SPI.o
- .debug_line      0x0002bc        0x136 build/default/production/Device/Init.o
- .debug_line      0x0003f2         0x24 build/default/production/Device/PWM.o
- .debug_line      0x000416         0x24 build/default/production/Device/EEPROM.o
- .debug_line      0x00043a         0x24 build/default/production/User/Motor.o
- .debug_line      0x00045e         0x24 build/default/production/User/Battery.o
- .debug_line      0x000482         0x48 build/default/production/main.o
- .debug_line      0x0004ca         0x24 build/default/production/Interrupt.o
- .debug_line      0x0004ee         0x24 build/default/production/User/DUALSHOCK2.o
+ .debug_line      0x000024        0x248 build/default/production/Device/Serial/I2C.o
+ .debug_line      0x00026c         0x24 build/default/production/Device/Serial/UART.o
+ .debug_line      0x000290         0x24 build/default/production/Device/Serial/SPI.o
+ .debug_line      0x0002b4        0x136 build/default/production/Device/Init.o
+ .debug_line      0x0003ea         0x24 build/default/production/Device/PWM.o
+ .debug_line      0x00040e         0x24 build/default/production/Device/EEPROM.o
+ .debug_line      0x000432         0x24 build/default/production/User/Motor.o
+ .debug_line      0x000456         0x24 build/default/production/User/Battery.o
+ .debug_line      0x00047a         0x48 build/default/production/main.o
+ .debug_line      0x0004c2         0x24 build/default/production/Interrupt.o
 
 .debug_frame      0x000000         0xbc
  *(.debug_frame)
@@ -964,7 +960,7 @@ LOAD data_init
                   0x0001ea         0x12 build/default/production/Interrupt.o
 
 __c30_signature
-                  0x0001fc         0x54
+                  0x0001fc         0x4e
  __c30_signature
                   0x0001fc          0x6 build/default/production/Device/Convert/AnaToDigi.o
  __c30_signature
@@ -988,14 +984,12 @@ __c30_signature
  __c30_signature
                   0x000238          0x6 build/default/production/Interrupt.o
  __c30_signature
-                  0x00023e          0x6 build/default/production/User/DUALSHOCK2.o
+                  0x00023e          0x6 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000244          0x6 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(crt0_standard.o)
- __c30_signature
-                  0x00024a          0x6 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(data_init_standard.o)
+                  0x000244          0x6 /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(data_init_standard.o)
 
-.nbss               0x0800          0x4
- .nbss              0x0800          0x4 build/default/production/Device/Serial/I2C.o
+.nbss               0x0800          0x2
+ .nbss              0x0800          0x2 build/default/production/Device/Serial/I2C.o
                     0x0800                  _ReceiveData
 
 .config_ICS       0xf8000e          0x2
@@ -1020,18 +1014,18 @@ __c30_signature
 .config_BSS       0xf80000          0x2
  .config_BSS      0xf80000          0x2 build/default/production/main.o
 
-.text             0x00029e        0x204
- .text            0x00029e        0x1be build/default/production/Device/Serial/I2C.o
+.text             0x00029e        0x1b0
+ .text            0x00029e        0x16a build/default/production/Device/Serial/I2C.o
                   0x00029e                  _Init_I2C
                   0x0002dc                  _IdleI2C
                   0x000314                  _GetID
                   0x000384                  __MSSP1Interrupt
- .text            0x00045c         0x3e build/default/production/Device/Init.o
-                  0x00045c                  _Init_Device
-                  0x000466                  _Init_Frequency
-                  0x00047c                  _Init_IO
- .text            0x00049a          0x8 build/default/production/main.o
-                  0x00049a                  _main
+ .text            0x000408         0x3e build/default/production/Device/Init.o
+                  0x000408                  _Init_Device
+                  0x000412                  _Init_Frequency
+                  0x000428                  _Init_IO
+ .text            0x000446          0x8 build/default/production/main.o
+                  0x000446                  _main
 
-.dinit            0x0004a2          0x8
- .dinit           0x0004a2          0x8 data_init
+.dinit            0x00044e          0x8
+ .dinit           0x00044e          0x8 data_init
