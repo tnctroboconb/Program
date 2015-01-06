@@ -61,7 +61,6 @@ void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void){
         }else{
             ReceiveData.plusminus = ( SSP1BUF & 0x01);
             ReceiveData.duty      = ((SSP1BUF & 0x3E) >> 1);
-            //ReceiveData[((SSP1BUF & 0x40) >> 6)].number    = ((SSP1BUF & 0x40) >> 6);
             ReceiveData.direction = ((SSP1BUF & 0xC0) >> 6);
         }
     }
