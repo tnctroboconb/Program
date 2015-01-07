@@ -6,4 +6,5 @@ Device/Serial/../../Common/Used.h  \
  Device/Serial/../../Common/../Device/Serial/I2C.h  \
  Device/Serial/../../Common/../Device/Serial/../../Common/Struct.h  \
  Device/Serial/../../Common/../Device/Serial/../../Common/TypeDef.h  \
- Device/Serial/SPI.h 
+ Device/Serial/SPI.h  \
+Device/Serial/../../Common/Struct.h 

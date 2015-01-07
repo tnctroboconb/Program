@@ -8,16 +8,7 @@
 #ifndef SPI_H
 #define	SPI_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
+#include "../../Common/Struct.h"
 
 #endif	/* SPI_H */
 
