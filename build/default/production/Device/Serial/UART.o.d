@@ -8,4 +8,6 @@ Device/Serial/../../Common/Used.h  \
  Device/Serial/../../Common/../Device/Serial/../../Common/Struct.h  \
  Device/Serial/../../Common/../Device/Serial/../../Common/TypeDef.h  \
  Device/Serial/UART.h  \
-Device/Serial/../../Common/Struct.h 
+Device/Serial/../../Common/Struct.h  \
+ Device/Serial/../../Common/Definition.h  \
+ Device/Serial/../../Common/TypeDef.h 
