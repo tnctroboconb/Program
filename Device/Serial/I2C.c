@@ -14,7 +14,7 @@ void Init_I2C(Address_t* Addr){
     //SSP1CON1 Initialization
     SSP1CON1bits.WCOL = 0;
     SSP1CON1bits.SSPOV = 0;
-    SSP1CON1bits.SSPEN = EN;
+    SSP1CON1bits.SSPEN = USE_I2C;
     SSP1CON1bits.CKP = 0;
     SSP1CON1bits.SSPM = MODE;
 
