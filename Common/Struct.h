@@ -10,7 +10,6 @@
 
 #include "TypeDef.h"
 
-
 typedef struct Battery{
     float       Voltage;
     float       Percent;
