@@ -16,8 +16,7 @@
 #ifndef USED_H
 #define	USED_H
 
-#define ENABLE  1
-#define DISABLE 0
+#include "Definition.h"
 
 #define USE_USART       DISABLE
 #define USE_I2C         ENABLE

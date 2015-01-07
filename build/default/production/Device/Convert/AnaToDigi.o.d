@@ -2,6 +2,7 @@ build/default/production/Device/Convert/AnaToDigi.o:  \
  Device/Convert/AnaToDigi.c  \
 Device/Convert/../../Common/StdInc.h  \
  Device/Convert/../../Common/Used.h  \
+ Device/Convert/../../Common/Definition.h  \
  Device/Convert/../../Common/../Device/Init.h  \
  Device/Convert/../../Common/../Device/Serial/I2C.h  \
  Device/Convert/../../Common/../Device/Serial/../../Common/Struct.h  \

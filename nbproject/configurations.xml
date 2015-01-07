@@ -10,6 +10,7 @@
         <itemPath>Common/StdInc.h</itemPath>
         <itemPath>Common/Struct.h</itemPath>
         <itemPath>Common/Used.h</itemPath>
+        <itemPath>Common/Definition.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Device" projectFiles="true">
         <logicalFolder name="f2" displayName="Convert" projectFiles="true">
