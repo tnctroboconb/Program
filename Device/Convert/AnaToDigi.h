@@ -30,6 +30,10 @@
 #define USE_AN1_PIN_TO_ANALOG_INPUT (1)
 
 
+#define VOLTDIV_H   (10000)
+#define VOLTDIV_L   (2700)
+#define REFVOL      (3.3)
+
 void ADInit();
 void BeforConvert(CINT8);
 void StartConvert();

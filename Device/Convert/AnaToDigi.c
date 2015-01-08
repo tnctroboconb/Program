@@ -6,7 +6,7 @@
 
 void ADInit(){
     //AD1CON1 Initialization
-    AD1CON1bits.ADON = CONVERT_ENABLE;
+    AD1CON1bits.ADON = USE_ADCONVERT;
     AD1CON1bits.ADSIDL = DISCONVERT_IN_IDLE;
     AD1CON1bits.FORM = DATA_FORMAT_TYPE;
     AD1CON1bits.SSRC = CONVERSION_TRIGGER_SOURCE;
@@ -50,13 +50,13 @@ void Convert(BatteryData_t* Battery,CINT8 PIN){
 }
 
 void inline Res_To_Volt(BatteryData_t* Battery){
-    Battery->tmp = ((4.2 * CELLS) * (Battery->Result / 1024));
+    Battery->tmp = (((3.3 * ((float)Battery->Result / 1024)) /VOLTDIV_L) * (VOLTDIV_H + VOLTDIV_L));
 }
 
 void inline Volt_To_Perce(BatteryData_t* Battery){
     if(Battery->tmp < Battery->Voltage){
         Battery->Voltage = Battery->tmp;
-        Battery->Percent = (((4.2 * CELLS) / Battery->Voltage) * 100);
+        Battery->Percent = ((Battery->Voltage / (4.2 * CELLS)) * 100);
     }else
         Battery->Voltage = Battery->tmp;
 }

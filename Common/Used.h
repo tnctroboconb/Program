@@ -23,10 +23,10 @@
 #define USE_I2C         ENABLE
 #define USE_SPI         DISABLE
 #define USE_PWM         DISABLE
-#define USE_ADCONVERT   DISABLE
+#define USE_ADCONVERT   ENABLE
 #define USE_EEPROM      DISABLE
 #define USE_MOTOR       DISABLE
-#define USE_BATTERY     DISABLE
+#define USE_BATTERY     ENABLE
 #define USE_DUALSHOCK2  DISABLE
 
 #include "../Device/Init.h"
