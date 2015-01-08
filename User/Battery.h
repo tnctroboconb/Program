@@ -13,9 +13,9 @@
 
 
 
-#define MAIN_BATTERY                PORTAbits.RA0
-#define SUB_BATTERY                 PORTAbits.RA1
-#define CELLS                       (3)
+#define MAIN_BATTERY    PORTAbits.RA0
+#define SUB_BATTERY     PORTAbits.RA1
+#define CELLS           (3)
 
 void UseThis(BatteryData_t*);
 
