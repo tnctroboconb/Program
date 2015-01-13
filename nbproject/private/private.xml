@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/Serial/I2C.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Common/StdInc.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/main.c</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/User/Battery.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/PWM.c</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/Serial/I2C.c</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/Convert/AnaToDigi.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Common/TypeDef.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/User/Motor.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/Init.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Common/Used.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/Convert/AnaToDigi.c</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Common/Struct.h</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/Serial/UART.c</file>
-        <file>file:/Users/sekiguchikeita/MPLABXProjects/ROBOCON/UpToGit/PIC24F08KL200.X/Device/Serial/UART.h</file>
-    </open-files>
 </project-private>

@@ -10,7 +10,7 @@
 
 #define SYNC        DISABLE
 #define HISPEED     DISABLE
-#define GENERAL     ENABLE
+#define GENERAL     DISABLE
 #define TOPC        DISABLE
 #define PARITY      DISABLE
 #define ADRESSING   ENABLE
