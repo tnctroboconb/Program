@@ -18,8 +18,8 @@
 
 #include "Definition.h"
 
-#define USE_USART       DISABLE
-#define USE_I2C         ENABLE
+#define USE_USART       ENABLE
+#define USE_I2C         DISABLE
 #define USE_SPI         DISABLE
 #define USE_PWM         DISABLE
 #define USE_ADCONVERT   ENABLE
