@@ -20,7 +20,7 @@
 #define BAUD        57600UL
 
 void Init_UART();
-void putch(CINT8);
+void putch(const BYTE);
 void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt(void);
 
 #endif	/* UART_H */

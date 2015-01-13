@@ -29,7 +29,7 @@ void ADInit(){
     AD1CON3bits.ADCS = 1;
 }
 
-void BeforConvert(CINT8 PIN){
+void BeforConvert(const BYTE PIN){
     AD1CHSbits.CH0NB = USE_AN0_PIN_TO_ANALOG_INPUT;
     AD1CHSbits.CH0SB = PIN;
     AD1CHSbits.CH0NA = USE_AN1_PIN_TO_ANALOG_INPUT;
@@ -40,7 +40,7 @@ void StartConvert(){
     while(AD1CON1bits.DONE);
 }
 
-void Convert(BatteryData_t* Battery,CINT8 PIN){
+void Convert(BatteryData_t* Battery,const BYTE PIN){
     BeforConvert(PIN);
     StartConvert();
     Battery->Result = ADC1BUF0;

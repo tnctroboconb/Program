@@ -35,9 +35,9 @@
 #define REFVOL      (3.3)
 
 void ADInit();
-void BeforConvert(CINT8);
+void BeforConvert(const BYTE);
 void StartConvert();
-void Convert(BatteryData_t*,CINT8);
+void Convert(BatteryData_t*,const BYTE);
 void inline Res_To_Volt(BatteryData_t*);
 void inline Volt_To_Perce(BatteryData_t*);
 

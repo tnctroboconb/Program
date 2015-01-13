@@ -11,7 +11,7 @@
 #include "../Common/TypeDef.h"
 
 void InitEEP();
-void WriteToEEP(CINT8);
-void ReadFromEEP(CINT8*);
+void WriteToEEP(const BYTE);
+void ReadFromEEP(const BYTE*);
 
 #endif	/* EEPROM_H */

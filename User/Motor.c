@@ -21,8 +21,7 @@ void SetToNext(State_t* NowMotorState,State_t *NextMotorState,State_t*TargetMoto
 }
 
 void GetData(State_t* NextMotorState){
-    NextMotorState[0] = ReceiveData[0];
-    NextMotorState[1] = ReceiveData[1];
+    NextMotorState[0] = ReceiveData;
 }
 
 #endif

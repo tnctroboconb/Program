@@ -19,12 +19,12 @@
 #include "Definition.h"
 
 #define USE_USART       ENABLE
-#define USE_I2C         DISABLE
-#define USE_SPI         DISABLE
-#define USE_PWM         DISABLE
+#define USE_I2C         ENABLE
+#define USE_SPI         ENABLE
+#define USE_PWM         ENABLE
 #define USE_ADCONVERT   ENABLE
-#define USE_EEPROM      DISABLE
-#define USE_MOTOR       DISABLE
+#define USE_EEPROM      ENABLE
+#define USE_MOTOR       ENABLE
 #define USE_BATTERY     ENABLE
 #define USE_DUALSHOCK2  DISABLE
 

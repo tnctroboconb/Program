@@ -8,12 +8,11 @@
 #ifndef TYPEDEF_H
 #define	TYPEDEF_H
 
-typedef signed char INT8;
-typedef const signed char CINT8;
-typedef unsigned char UINT8;
+typedef signed char BYTE;
 typedef unsigned int UINT;
 typedef unsigned long ULONG;
 typedef long long LLONG;
 typedef unsigned USIGN;
+//typedef bool BIT;
 
 #endif	/* TYPEDEF_H */

@@ -10,7 +10,7 @@ void Init_UART(){
     U1MODEbits.RTSMD = FLOW_CTL;
 }
 
-void putch(CINT8 data){
+void putch(const BYTE data){
 
 }
 

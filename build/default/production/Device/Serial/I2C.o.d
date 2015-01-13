@@ -7,17 +7,19 @@ Device/Serial/../../Common/Used.h  \
  Device/Serial/../../Common/../Device/Serial/UART.h  \
  Device/Serial/../../Common/../Device/Serial/../../Common/Struct.h  \
  Device/Serial/../../Common/../Device/Serial/../../Common/TypeDef.h  \
-<<<<<<< HEAD
+ Device/Serial/../../Common/../Device/Serial/../../Common/TypeDef.h  \
+ Device/Serial/../../Common/../Device/Serial/I2C.h  \
+ Device/Serial/../../Common/../Device/Serial/SPI.h  \
+ Device/Serial/../../Common/../Device/PWM.h  \
  Device/Serial/../../Common/../Device/Convert/AnaToDigi.h  \
  Device/Serial/../../Common/../Device/Convert/../../Common/StdInc.h  \
  Device/Serial/../../Common/../Device/Convert/../../Common/Struct.h  \
+ Device/Serial/../../Common/../Device/EEPROM.h  \
+ Device/Serial/../../Common/../Device/../Common/TypeDef.h  \
+ Device/Serial/../../Common/../User/Motor.h  \
+ Device/Serial/../../Common/../User/../Common/Struct.h  \
  Device/Serial/../../Common/../User/Battery.h  \
  Device/Serial/../../Common/../User/../Common/StdInc.h  \
  Device/Serial/../../Common/../User/../Device/Convert/AnaToDigi.h  \
- Device/Serial/I2C.h 
-=======
- Device/Serial/../../Common/../Device/Serial/../../Common/TypeDef.h  \
  Device/Serial/../../Common/../Common/Definition.h  \
-Device/Serial/I2C.h  \
- Device/Serial/../../Common/Struct.h 
->>>>>>> UART
+Device/Serial/I2C.h 

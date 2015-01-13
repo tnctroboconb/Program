@@ -7,17 +7,21 @@ Common/../Device/Init.h  \
  Common/../Device/Serial/UART.h  \
  Common/../Device/Serial/../../Common/Struct.h  \
  Common/../Device/Serial/../../Common/TypeDef.h  \
-<<<<<<< HEAD
- Common/../Device/Convert/AnaToDigi.h  \
+ Common/../Device/Serial/../../Common/TypeDef.h  \
+ Common/../Device/Serial/I2C.h  \
+Common/../Device/Serial/SPI.h  \
+ Common/../Device/PWM.h  \
+Common/../Device/Convert/AnaToDigi.h  \
  Common/../Device/Convert/../../Common/StdInc.h  \
  Common/../Device/Convert/../../Common/Struct.h  \
+Common/../Device/EEPROM.h  \
+ Common/../Device/../Common/TypeDef.h  \
+Common/../User/Motor.h  \
+ Common/../User/../Common/Struct.h  \
 Common/../User/Battery.h  \
  Common/../User/../Common/StdInc.h  \
  Common/../User/../Device/Convert/AnaToDigi.h  \
-=======
- Common/../Device/Serial/../../Common/TypeDef.h  \
  Common/../Common/Definition.h  \
->>>>>>> UART
 Common/Struct.h  \
 Common/TypeDef.h  \
  Common/Used.h 

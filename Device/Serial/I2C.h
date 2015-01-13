@@ -69,7 +69,7 @@ void Init_I2C(Address_t*);
 void Start_I2C(Address_t*);
 void Restart_I2C(Address_t*);
 void IdleI2C();
-void Send_Data(Address_t*,INT8);
+void Send_Data(Address_t*,BYTE);
 void Get_Data(State_t*);
 void GetID(Address_t*);
 void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void);
