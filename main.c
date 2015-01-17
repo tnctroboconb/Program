@@ -20,5 +20,7 @@
 #endif
 
 int main(){
-
+    Address_t Addr;
+    I2CProtocol* I2C = Use_I2C();
+    I2C->I2CInit(&Addr);
 }

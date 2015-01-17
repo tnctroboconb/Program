@@ -13,6 +13,6 @@ typedef unsigned int UINT;
 typedef unsigned long ULONG;
 typedef long long LLONG;
 typedef unsigned USIGN;
-//typedef bool BIT;
+typedef unsigned char BOOL;
 
 #endif	/* TYPEDEF_H */

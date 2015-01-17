@@ -19,9 +19,9 @@ typedef struct Battery{
     USIGN       ID:1;
 } BatteryData_t;
 
-typedef struct myID{
-    union{
-        USIGN    ID:4;
+typedef union myID{
+    USIGN    ID:4;
+    struct{
         USIGN    ID0:1;
         USIGN    ID1:1;
         USIGN    ID2:1;
@@ -37,10 +37,22 @@ typedef struct myID{
  |　 状態   |      50%からの差分     　|符号|
  ----------------------------------------
  */
-typedef struct MotorData{
-        USIGN  plusminus:1;
-        USIGN  duty:5;
-        USIGN  direction:2;
+typedef union MotorData{
+    struct{
+        USIGN   plusminus:1;
+        USIGN   duty:5;
+        USIGN   direction:2;
+    };
+    struct{
+        USIGN   plusminus:1;
+        USIGN   duty4:1;
+        USIGN   duty3:1;
+        USIGN   duty2:1;
+        USIGN   duty1:1;
+        USIGN   duty0:1;
+        USIGN   direction1:1;
+        USIGN   direction0:1;
+    };
 } State_t;
 
 extern State_t ReceiveData;
