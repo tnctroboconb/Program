@@ -67,7 +67,7 @@
 
 BOOL Init_I2C(Address_t*);
 BOOL Start_I2C(Address_t*);
-BOOL Restart_I2C(Address_t*);
+BOOL Restart_I2C();
 BOOL IdleI2C();
 BOOL Send_Data(Address_t*,BYTE);
 BOOL Get_Data(State_t*);
@@ -78,7 +78,7 @@ void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void);
 typedef struct{
     BOOL (*I2CInit)(Address_t*);
     BOOL (*I2CStart)(Address_t*);
-    BOOL (*I2CRestart)(Address_t*);
+    BOOL (*I2CRestart)(void);
     BOOL (*I2CIdle)(void);
     BOOL (*DataSend)(Address_t*,BYTE);
     BOOL (*Data_Get)(State_t*);

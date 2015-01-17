@@ -2,6 +2,7 @@
 #include "I2C.h"
 
 State_t ReceiveData;
+extern BYTE SendData;
 I2CProtocol I2C;
 
 #if USE_I2C == ENABLE
@@ -74,8 +75,9 @@ BOOL GetID(Address_t* Addr){
 BOOL Start_I2C(Address_t* Addr){
     return 0;
 }
-BOOL Restart_I2C(Address_t* Addr){
-    return 0;
+BOOL Restart_I2C(){
+    SSP1CON1bits.CKP = 1;
+    IFS1bits.SSP1IF = 0;
 }
 BOOL Send_Data(Address_t* Addr,BYTE Data){
     return 0;
@@ -84,17 +86,38 @@ BOOL Get_Data(State_t* Addr){
     return 0;
 }
 
+
 void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void){
     int dummy;
-    IFS1bits.SSP1IF = 0;
     if(!SSP1STATbits.R_W){
+        /*****マスタからの書き込み要求*****/
         if(!SSP1STATbits.D_A){
+            /*****アドレスを受信した時の対応*****/
             dummy = SSP1BUF;
             IdleI2C();
         }else{
+            /*****データを受信した時の対応*****/
             ReceiveData.plusminus = ( SSP1BUF & 0x01);
             ReceiveData.duty      = ((SSP1BUF & 0x3E) >> 1);
             ReceiveData.direction = ((SSP1BUF & 0xC0) >> 6);
+        }
+        I2C.I2CRestart();
+    }else{
+        /*****スレーブからの読み出し要求*****/
+        if(SSP1STATbits.BF){
+            /*****アドレス受信直後の割り込み*****/
+            dummy = SSP1BUF;
+            while(SSP1CON1bits.CKP | SSP1STATbits.BF);
+            SSP1BUF = SendData;
+            I2C.I2CRestart();
+        }else if(!SSP1CON2bits.ACKSTAT){
+            /*****ACKによる割り込み*****/
+            while(SSP1CON1bits.CKP | SSP1STATbits.BF);
+            SSP1BUF = SendData;
+            I2C.I2CRestart();
+        }else{
+            /*****NACK応答*****/
+            I2C.I2CRestart();
         }
     }
 }

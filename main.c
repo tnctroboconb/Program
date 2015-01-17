@@ -19,6 +19,8 @@
 #error Used modules are not detected.
 #endif
 
+BYTE SendData;
+
 int main(){
     Address_t Addr;
     I2CProtocol* I2C = Use_I2C();
