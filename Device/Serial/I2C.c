@@ -22,6 +22,11 @@ I2CProtocol* Use_I2C(){
         I2C.IDGet = GetID;
         I2C.Data_Get = Get_Data;
         I2C.DataSend = Send_Data;
+        I2C.SetData = DataSet;
+        I2C.AddrRead = ReadAddr;
+        I2C.WaitSequence = SequenceWait;
+        I2C.WriteRequest = RequestWrite;
+        I2C.IsAddress = Address;
     }
     I2C.Initialized = TRUE;
     return &I2C;
@@ -89,38 +94,60 @@ BOOL Restart_I2C(){
 BOOL Send_Data(){
     return TRUE;
 }
-BOOL Get_Data(State_t* State){
+BOOL Get_Data(){
+    ReceiveData.plusminus = ( SSP1BUF & 0x01);
+    ReceiveData.duty      = ((SSP1BUF & 0x3E) >> 1);
+    ReceiveData.direction = ((SSP1BUF & 0xC0) >> 6);
     return TRUE;
 }
 
+BOOL DataSet(BYTE Data){
+    SSP1BUF = Data;
+    return TRUE;
+}
+
+BOOL ReadAddr(){
+    int dummy = SSP1BUF;
+    return TRUE;
+}
+
+BOOL SequenceWait(){
+    while(SSP1CON1bits.CKP | SSP1STATbits.BF);
+    return TRUE;
+}
+
+BOOL RequestWrite(){
+    return SSP1STATbits.R_W == 0 ? 1 : 0;
+}
+
+BOOL Address(){
+    return SSP1STATbits.D_A == 0 ? 1 : 0;
+}
 
 void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void){
-    int dummy;
-    if(!SSP1STATbits.R_W){
+    if(I2C.WriteRequest()){
         /*****マスタからの書き込み要求*****/
-        if(!SSP1STATbits.D_A){
+        if(I2C.IsAddress()){
             /*****アドレスを受信した時の対応*****/
-            dummy = SSP1BUF;
-            IdleI2C();
+            I2C.AddrRead();
+            I2C.I2CIdle();
         }else{
             /*****データを受信した時の対応*****/
-            ReceiveData.plusminus = ( SSP1BUF & 0x01);
-            ReceiveData.duty      = ((SSP1BUF & 0x3E) >> 1);
-            ReceiveData.direction = ((SSP1BUF & 0xC0) >> 6);
+            I2C.Data_Get();
         }
         I2C.I2CRestart();
     }else{
         /*****スレーブからの読み出し要求*****/
         if(SSP1STATbits.BF){
             /*****アドレス受信直後の割り込み*****/
-            dummy = SSP1BUF;
-            while(SSP1CON1bits.CKP | SSP1STATbits.BF);
-            SSP1BUF = SendData;
+            I2C.AddrRead();
+            I2C.WaitSequence();
+            I2C.SetData(SendData);
             I2C.I2CRestart();
         }else if(!SSP1CON2bits.ACKSTAT){
             /*****ACKによる割り込み*****/
-            while(SSP1CON1bits.CKP | SSP1STATbits.BF);
-            SSP1BUF = SendData;
+            I2C.WaitSequence();
+            I2C.SetData(SendData);
             I2C.I2CRestart();
         }else{
             /*****NACK応答*****/

@@ -72,20 +72,30 @@ BOOL Start_I2C();
 BOOL Restart_I2C();
 BOOL IdleI2C();
 BOOL Send_Data();
-BOOL Get_Data(State_t*);
+BOOL Get_Data();
 BOOL GetID(Address_t*);
+BOOL DataSet(BYTE);
+BOOL ReadAddr();
+BOOL SequenceWait();
+BOOL RequestWrite();
+BOOL Address();
 void __attribute__((interrupt, no_auto_psv)) _MSSP1Interrupt(void);
 
 
 typedef struct{
-    BOOL (*I2CInit)(Address_t*);
-    BOOL (*I2CStart)(void);
-    BOOL (*I2CRestart)(void);
-    BOOL (*I2CIdle)(void);
-    BOOL (*DataSend)();
-    BOOL (*Data_Get)(State_t*);
-    BOOL (*IDGet)(Address_t*);
-    BOOL Initialized;
+    BOOL (*I2CInit)(Address_t*);    //I2Cモジュールの初期化
+    BOOL (*I2CStart)(void);         //I2Cモジュールをスタート
+    BOOL (*I2CRestart)(void);       //I2Cを再開
+    BOOL (*I2CIdle)(void);          //アイドリング
+    BOOL (*DataSend)();             //データをバスに送信
+    BOOL (*Data_Get)();             //バスからデータを取得
+    BOOL (*IDGet)(Address_t*);      //IDを取得
+    BOOL (*SetData)(BYTE);          //バッファにデータをセット
+    BOOL (*AddrRead)(void);         //アドレスを空読み
+    BOOL (*WaitSequence)(void);     //送受信シーケンス待ち
+    BOOL (*WriteRequest)(void);
+    BOOL (*IsAddress)(void);
+    BOOL Initialized;               //初期化フラグ
 } I2CProtocol;
 
 #endif
