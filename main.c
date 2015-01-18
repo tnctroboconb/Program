@@ -23,6 +23,17 @@ BYTE SendData;
 
 int main(){
     Address_t Addr;
-    I2CProtocol* I2C = Use_I2C();
+    //I2CProtocol* I2C = Use_I2C();
+    I2CProtocol* I2C = new(I2CProtocol);
     I2C->I2CInit(&Addr);
 }
+
+/*送信時の例
+ * int main(){
+ *     Address_t Addr;
+ *     Addr.ID0L = 0x03;
+ *     I2CProtocol* I2C = new(I2CProtocol);
+ *     I2C.InitI2C();
+ *     I2C.SendData(0x03,0x2f);
+ * }
+ */

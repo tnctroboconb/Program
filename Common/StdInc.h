@@ -17,6 +17,5 @@
 #include "Used.h"
 #include "../Common/Definition.h"
 
-
 #endif	/* STDINC_H */
 

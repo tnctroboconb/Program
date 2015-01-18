@@ -13,6 +13,8 @@ typedef unsigned int UINT;
 typedef unsigned long ULONG;
 typedef long long LLONG;
 typedef unsigned USIGN;
-typedef unsigned char BOOL;
+//typedef unsigned char BOOL;
+
+#include <stdint.h>
 
 #endif	/* TYPEDEF_H */

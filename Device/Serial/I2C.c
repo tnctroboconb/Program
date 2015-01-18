@@ -7,16 +7,17 @@ I2CProtocol I2C;
 
 #if USE_I2C == ENABLE
 
-
 I2CProtocol* Use_I2C(){
-    I2C.I2CInit = Init_I2C;
-    I2C.I2CStart = Start_I2C;
-    I2C.I2CRestart = Restart_I2C;
-    I2C.I2CIdle = IdleI2C;
-    I2C.IDGet = GetID;
-    I2C.Data_Get = Get_Data;
-    I2C.DataSend = Send_Data;
-
+    if(!I2C.Initialized){
+        I2C.I2CInit = Init_I2C;
+        I2C.I2CStart = Start_I2C;
+        I2C.I2CRestart = Restart_I2C;
+        I2C.I2CIdle = IdleI2C;
+        I2C.IDGet = GetID;
+        I2C.Data_Get = Get_Data;
+        I2C.DataSend = Send_Data;
+    }
+    I2C.Initialized = TRUE;
     return &I2C;
 }
 
@@ -54,7 +55,8 @@ BOOL Init_I2C(Address_t* Addr){
 
     //MotorDriverAddress
     GetID(Addr);
-    SSP1ADD = ((Addr->ID) << 1);
+    SSP1ADD = ((Addr->ID0L) << 1);
+    return TRUE;
 }
 
 BOOL IdleI2C(){
@@ -63,27 +65,30 @@ BOOL IdleI2C(){
     while(SSP1CON2bits.RCEN);
     while(SSP1CON2bits.ACKEN);
     while(SSP1STATbits.R_NOT_W);
+    return TRUE;
 }
 
 BOOL GetID(Address_t* Addr){
-    Addr->ID0 = PORTAbits.RA0;
-    Addr->ID1 = (PORTAbits.RA1 << 1);
-    Addr->ID2 = (PORTAbits.RA2 << 2);
-    Addr->ID3 = (PORTAbits.RA3 << 3);
+    Addr->ID0L0 = PORTAbits.RA0;
+    Addr->ID0L1 = (PORTAbits.RA1 << 1);
+    Addr->ID0L2 = (PORTAbits.RA2 << 2);
+    Addr->ID0L3 = (PORTAbits.RA3 << 3);
+    return TRUE;
 }
 
 BOOL Start_I2C(Address_t* Addr){
-    return 0;
+    return TRUE;
 }
 BOOL Restart_I2C(){
     SSP1CON1bits.CKP = 1;
     IFS1bits.SSP1IF = 0;
+    return TRUE;
 }
 BOOL Send_Data(Address_t* Addr,BYTE Data){
-    return 0;
+    return TRUE;
 }
 BOOL Get_Data(State_t* Addr){
-    return 0;
+    return TRUE;
 }
 
 

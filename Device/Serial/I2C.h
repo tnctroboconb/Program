@@ -88,6 +88,6 @@ typedef struct{
 
 I2CProtocol* Use_I2C();
 
-
+#define new(I2CProtocol) Use_I2C();
 
 #endif	/* I2C_H */
