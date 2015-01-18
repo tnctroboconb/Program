@@ -26,6 +26,7 @@ int main(){
     //I2CProtocol* I2C = Use_I2C();
     I2CProtocol* I2C = new(I2CProtocol);
     I2C->I2CInit(&Addr);
+    I2C->I2CStart();
 }
 
 /*送信時の例

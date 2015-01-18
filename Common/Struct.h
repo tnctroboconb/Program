@@ -101,5 +101,7 @@ typedef enum Boolean{TRUE = 1,FALSE = 0}BOOL;
 typedef enum Direct{cw = 1,ccw = 0}Direction;
 typedef enum Switch{on = 1,off = 0}SW;
 typedef enum ENDIS{enable = 1,disable = 0}EN_DIS;
+typedef enum ReadWrite{Read = 1,Write  = 0}RW;
+
 
 #endif	/* STRUCT_H */

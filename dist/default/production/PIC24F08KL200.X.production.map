@@ -90,9 +90,8 @@ Program Memory  [Origin = 0x200, Length = 0x1400]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x2ec           0x462  (1122)
-.text                        0x4ec               0x586           0x849  (2121)
-.init.delay32                0xa72                0x1c            0x2a  (42)
-.text                        0xa8e                0x18            0x24  (36)
+.text                        0x4ec               0x59e           0x86d  (2157)
+.init.delay32                0xa8a                0x1c            0x2a  (42)
 .dinit                       0xaa6                 0xe            0x15  (21)
 
                      Total program memory used (bytes):          0xd0e  (3342) 43%
@@ -157,57 +156,57 @@ External Symbols in Program Memory (by address):
                   0x000566                  _IdleI2C
                   0x0005a2                  _GetID
                   0x00061c                  _Start_I2C
-                  0x000628                  _Restart_I2C
-                  0x000636                  _Send_Data
-                  0x000644                  _Get_Data
-                  0x000650                  __MSSP1Interrupt
-                  0x000740                  _ADInit
-                  0x00078e                  _BeforConvert
-                  0x0007ae                  _StartConvert
-                  0x0007c0                  _Convert
-                  0x0007e6                  _Res_To_Volt
-                  0x000828                  _Volt_To_Perce
-                  0x000886                  _UseThis
-                  0x000950                  _MotorDrive
-                  0x000958                  _SetToNext
-                  0x000a0a                  _GetData
-                  0x000a18                  _Init_Device
-                  0x000a22                  _Init_Frequency
-                  0x000a38                  _Init_IO
-                  0x000a56                  _Init_UART
-                  0x000a64                  _putch
-                  0x000a6c                  __U1RXInterrupt
-                  0x000a72                  ___delay32
-                  0x000a8e                  _main
+                  0x000626                  _Restart_I2C
+                  0x000634                  _Send_Data
+                  0x00063e                  _Get_Data
+                  0x00064a                  __MSSP1Interrupt
+                  0x00073a                  _ADInit
+                  0x000788                  _BeforConvert
+                  0x0007a8                  _StartConvert
+                  0x0007ba                  _Convert
+                  0x0007e0                  _Res_To_Volt
+                  0x000822                  _Volt_To_Perce
+                  0x000880                  _UseThis
+                  0x00094a                  _MotorDrive
+                  0x000952                  _SetToNext
+                  0x000a04                  _GetData
+                  0x000a12                  _Init_Device
+                  0x000a1c                  _Init_Frequency
+                  0x000a32                  _Init_IO
+                  0x000a50                  _main
+                  0x000a6e                  _Init_UART
+                  0x000a7c                  _putch
+                  0x000a84                  __U1RXInterrupt
+                  0x000a8a                  ___delay32
 
 External Symbols in Program Memory (by name):
 
-                  0x000740                  _ADInit
-                  0x00078e                  _BeforConvert
-                  0x0007c0                  _Convert
-                  0x000a0a                  _GetData
+                  0x00073a                  _ADInit
+                  0x000788                  _BeforConvert
+                  0x0007ba                  _Convert
+                  0x000a04                  _GetData
                   0x0005a2                  _GetID
-                  0x000644                  _Get_Data
+                  0x00063e                  _Get_Data
                   0x000566                  _IdleI2C
-                  0x000a18                  _Init_Device
-                  0x000a22                  _Init_Frequency
+                  0x000a12                  _Init_Device
+                  0x000a1c                  _Init_Frequency
                   0x00051c                  _Init_I2C
-                  0x000a38                  _Init_IO
-                  0x000a56                  _Init_UART
-                  0x000950                  _MotorDrive
-                  0x0007e6                  _Res_To_Volt
-                  0x000628                  _Restart_I2C
-                  0x000636                  _Send_Data
-                  0x000958                  _SetToNext
-                  0x0007ae                  _StartConvert
+                  0x000a32                  _Init_IO
+                  0x000a6e                  _Init_UART
+                  0x00094a                  _MotorDrive
+                  0x0007e0                  _Res_To_Volt
+                  0x000626                  _Restart_I2C
+                  0x000634                  _Send_Data
+                  0x000952                  _SetToNext
+                  0x0007a8                  _StartConvert
                   0x00061c                  _Start_I2C
-                  0x000886                  _UseThis
+                  0x000880                  _UseThis
                   0x0004ec                  _Use_I2C
-                  0x000828                  _Volt_To_Perce
+                  0x000822                  _Volt_To_Perce
                   0x0002b6                  __DefaultInterrupt
-                  0x000650                  __MSSP1Interrupt
-                  0x000a6c                  __U1RXInterrupt
-                  0x000a72                  ___delay32
+                  0x00064a                  __MSSP1Interrupt
+                  0x000a84                  __U1RXInterrupt
+                  0x000a8a                  ___delay32
                   0x0002ba                  ___divsf3
                   0x00033e                  ___eqsf2
                   0x000464                  ___floatundisf
@@ -228,8 +227,8 @@ External Symbols in Program Memory (by name):
                   0x000396                  __funpack2
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000a8e                  _main
-                  0x000a64                  _putch
+                  0x000a50                  _main
+                  0x000a7c                  _putch
 
 Memory Configuration
 
@@ -368,36 +367,36 @@ __FICD
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x3096
+.debug_info       0x000000       0x304a
  *(.debug_info)
  .debug_info      0x000000        0x96a build/default/production/Device/Convert/AnaToDigi.o
- .debug_info      0x00096a       0x1022 build/default/production/Device/Serial/I2C.o
- .debug_info      0x00198c        0x369 build/default/production/Device/Serial/UART.o
- .debug_info      0x001cf5        0x13f build/default/production/Device/Serial/SPI.o
- .debug_info      0x001e34        0x2cd build/default/production/Device/Init.o
- .debug_info      0x002101        0x138 build/default/production/Device/PWM.o
- .debug_info      0x002239        0x13b build/default/production/Device/EEPROM.o
- .debug_info      0x002374        0x333 build/default/production/User/Motor.o
- .debug_info      0x0026a7        0x2dd build/default/production/User/Battery.o
- .debug_info      0x002984        0x5db build/default/production/main.o
- .debug_info      0x002f5f        0x137 build/default/production/Interrupt.o
+ .debug_info      0x00096a        0xfe0 build/default/production/Device/Serial/I2C.o
+ .debug_info      0x00194a        0x369 build/default/production/Device/Serial/UART.o
+ .debug_info      0x001cb3        0x13f build/default/production/Device/Serial/SPI.o
+ .debug_info      0x001df2        0x2cd build/default/production/Device/Init.o
+ .debug_info      0x0020bf        0x138 build/default/production/Device/PWM.o
+ .debug_info      0x0021f7        0x13b build/default/production/Device/EEPROM.o
+ .debug_info      0x002332        0x333 build/default/production/User/Motor.o
+ .debug_info      0x002665        0x2dd build/default/production/User/Battery.o
+ .debug_info      0x002942        0x5d1 build/default/production/main.o
+ .debug_info      0x002f13        0x137 build/default/production/Interrupt.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x775
+.debug_abbrev     0x000000        0x791
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x12a build/default/production/Device/Convert/AnaToDigi.o
- .debug_abbrev    0x00012a        0x1f7 build/default/production/Device/Serial/I2C.o
- .debug_abbrev    0x000321         0xf4 build/default/production/Device/Serial/UART.o
- .debug_abbrev    0x000415         0x1f build/default/production/Device/Serial/SPI.o
- .debug_abbrev    0x000434         0x4a build/default/production/Device/Init.o
- .debug_abbrev    0x00047e         0x1f build/default/production/Device/PWM.o
- .debug_abbrev    0x00049d         0x1f build/default/production/Device/EEPROM.o
- .debug_abbrev    0x0004bc         0xc8 build/default/production/User/Motor.o
- .debug_abbrev    0x000584         0xd7 build/default/production/User/Battery.o
- .debug_abbrev    0x00065b         0xfb build/default/production/main.o
- .debug_abbrev    0x000756         0x1f build/default/production/Interrupt.o
+ .debug_abbrev    0x00012a        0x205 build/default/production/Device/Serial/I2C.o
+ .debug_abbrev    0x00032f         0xf4 build/default/production/Device/Serial/UART.o
+ .debug_abbrev    0x000423         0x1f build/default/production/Device/Serial/SPI.o
+ .debug_abbrev    0x000442         0x4a build/default/production/Device/Init.o
+ .debug_abbrev    0x00048c         0x1f build/default/production/Device/PWM.o
+ .debug_abbrev    0x0004ab         0x1f build/default/production/Device/EEPROM.o
+ .debug_abbrev    0x0004ca         0xc8 build/default/production/User/Motor.o
+ .debug_abbrev    0x000592         0xd7 build/default/production/User/Battery.o
+ .debug_abbrev    0x000669        0x109 build/default/production/main.o
+ .debug_abbrev    0x000772         0x1f build/default/production/Interrupt.o
 
-.debug_line       0x000000        0xd15
+.debug_line       0x000000        0xd1d
  *(.debug_line)
  .debug_line      0x000000        0x28c build/default/production/Device/Convert/AnaToDigi.o
  .debug_line      0x00028c        0x429 build/default/production/Device/Serial/I2C.o
@@ -408,8 +407,8 @@ __FICD
  .debug_line      0x0009a1         0x24 build/default/production/Device/EEPROM.o
  .debug_line      0x0009c5        0x110 build/default/production/User/Motor.o
  .debug_line      0x000ad5        0x151 build/default/production/User/Battery.o
- .debug_line      0x000c26         0xcb build/default/production/main.o
- .debug_line      0x000cf1         0x24 build/default/production/Interrupt.o
+ .debug_line      0x000c26         0xd3 build/default/production/main.o
+ .debug_line      0x000cf9         0x24 build/default/production/Interrupt.o
 
 .debug_frame      0x000000        0x22c
  *(.debug_frame)
@@ -494,12 +493,12 @@ __FICD
                   0x000024          0x4 LONG 0x2b6 DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x2b6 DEFINED (__Interrupt9)?ABSOLUTE (__Interrupt9):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x2b6 DEFINED (__Interrupt10)?ABSOLUTE (__Interrupt10):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0xa6c DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0xa84 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002c          0x4 LONG 0x2b6 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x2b6 DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x2b6 DEFINED (__Interrupt14)?ABSOLUTE (__Interrupt14):ABSOLUTE (__DefaultInterrupt)
                   0x000032          0x4 LONG 0x2b6 DEFINED (__NVMWriteInterrupt)?ABSOLUTE (__NVMWriteInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000034          0x4 LONG 0x650 DEFINED (__MSSP1Interrupt)?ABSOLUTE (__MSSP1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000034          0x4 LONG 0x64a DEFINED (__MSSP1Interrupt)?ABSOLUTE (__MSSP1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000036          0x4 LONG 0x2b6 DEFINED (__MSSP1BCInterrupt)?ABSOLUTE (__MSSP1BCInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000038          0x4 LONG 0x2b6 DEFINED (__CompInterrupt)?ABSOLUTE (__CompInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00003a          0x4 LONG 0x2b6 DEFINED (__CNInterrupt)?ABSOLUTE (__CNInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -622,12 +621,12 @@ __FICD
                   0x000124          0x4 LONG 0x2b6 DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000126          0x4 LONG 0x2b6 DEFINED (__AltInterrupt9)?ABSOLUTE (__AltInterrupt9):DEFINED (__Interrupt9)?ABSOLUTE (__Interrupt9):ABSOLUTE (__DefaultInterrupt)
                   0x000128          0x4 LONG 0x2b6 DEFINED (__AltInterrupt10)?ABSOLUTE (__AltInterrupt10):DEFINED (__Interrupt10)?ABSOLUTE (__Interrupt10):ABSOLUTE (__DefaultInterrupt)
-                  0x00012a          0x4 LONG 0xa6c DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00012a          0x4 LONG 0xa84 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012c          0x4 LONG 0x2b6 DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012e          0x4 LONG 0x2b6 DEFINED (__AltADC1Interrupt)?ABSOLUTE (__AltADC1Interrupt):DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000130          0x4 LONG 0x2b6 DEFINED (__AltInterrupt14)?ABSOLUTE (__AltInterrupt14):DEFINED (__Interrupt14)?ABSOLUTE (__Interrupt14):ABSOLUTE (__DefaultInterrupt)
                   0x000132          0x4 LONG 0x2b6 DEFINED (__AltNVMWriteInterrupt)?ABSOLUTE (__AltNVMWriteInterrupt):DEFINED (__NVMWriteInterrupt)?ABSOLUTE (__NVMWriteInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000134          0x4 LONG 0x650 DEFINED (__AltMSSP1Interrupt)?ABSOLUTE (__AltMSSP1Interrupt):DEFINED (__MSSP1Interrupt)?ABSOLUTE (__MSSP1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000134          0x4 LONG 0x64a DEFINED (__AltMSSP1Interrupt)?ABSOLUTE (__AltMSSP1Interrupt):DEFINED (__MSSP1Interrupt)?ABSOLUTE (__MSSP1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000136          0x4 LONG 0x2b6 DEFINED (__AltMSSP1BCInterrupt)?ABSOLUTE (__AltMSSP1BCInterrupt):DEFINED (__MSSP1BCInterrupt)?ABSOLUTE (__MSSP1BCInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000138          0x4 LONG 0x2b6 DEFINED (__AltCompInterrupt)?ABSOLUTE (__AltCompInterrupt):DEFINED (__CompInterrupt)?ABSOLUTE (__CompInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00013a          0x4 LONG 0x2b6 DEFINED (__AltCNInterrupt)?ABSOLUTE (__AltCNInterrupt):DEFINED (__CNInterrupt)?ABSOLUTE (__CNInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1203,46 +1202,44 @@ __c30_signature
 .config_BSS       0xf80000          0x2
  .config_BSS      0xf80000          0x2 build/default/production/main.o
 
-.text             0x0004ec        0x586
- .text            0x0004ec        0x254 build/default/production/Device/Serial/I2C.o
+.text             0x0004ec        0x59e
+ .text            0x0004ec        0x24e build/default/production/Device/Serial/I2C.o
                   0x0004ec                  _Use_I2C
                   0x00051c                  _Init_I2C
                   0x000566                  _IdleI2C
                   0x0005a2                  _GetID
                   0x00061c                  _Start_I2C
-                  0x000628                  _Restart_I2C
-                  0x000636                  _Send_Data
-                  0x000644                  _Get_Data
-                  0x000650                  __MSSP1Interrupt
- .text            0x000740        0x146 build/default/production/Device/Convert/AnaToDigi.o
-                  0x000740                  _ADInit
-                  0x00078e                  _BeforConvert
-                  0x0007ae                  _StartConvert
-                  0x0007c0                  _Convert
-                  0x0007e6                  _Res_To_Volt
-                  0x000828                  _Volt_To_Perce
- .text            0x000886         0xca build/default/production/User/Battery.o
-                  0x000886                  _UseThis
- .text            0x000950         0xc8 build/default/production/User/Motor.o
-                  0x000950                  _MotorDrive
-                  0x000958                  _SetToNext
-                  0x000a0a                  _GetData
- .text            0x000a18         0x3e build/default/production/Device/Init.o
-                  0x000a18                  _Init_Device
-                  0x000a22                  _Init_Frequency
-                  0x000a38                  _Init_IO
- .text            0x000a56         0x1c build/default/production/Device/Serial/UART.o
-                  0x000a56                  _Init_UART
-                  0x000a64                  _putch
-                  0x000a6c                  __U1RXInterrupt
+                  0x000626                  _Restart_I2C
+                  0x000634                  _Send_Data
+                  0x00063e                  _Get_Data
+                  0x00064a                  __MSSP1Interrupt
+ .text            0x00073a        0x146 build/default/production/Device/Convert/AnaToDigi.o
+                  0x00073a                  _ADInit
+                  0x000788                  _BeforConvert
+                  0x0007a8                  _StartConvert
+                  0x0007ba                  _Convert
+                  0x0007e0                  _Res_To_Volt
+                  0x000822                  _Volt_To_Perce
+ .text            0x000880         0xca build/default/production/User/Battery.o
+                  0x000880                  _UseThis
+ .text            0x00094a         0xc8 build/default/production/User/Motor.o
+                  0x00094a                  _MotorDrive
+                  0x000952                  _SetToNext
+                  0x000a04                  _GetData
+ .text            0x000a12         0x3e build/default/production/Device/Init.o
+                  0x000a12                  _Init_Device
+                  0x000a1c                  _Init_Frequency
+                  0x000a32                  _Init_IO
+ .text            0x000a50         0x1e build/default/production/main.o
+                  0x000a50                  _main
+ .text            0x000a6e         0x1c build/default/production/Device/Serial/UART.o
+                  0x000a6e                  _Init_UART
+                  0x000a7c                  _putch
+                  0x000a84                  __U1RXInterrupt
 
-.init.delay32     0x000a72         0x1c
- .init.delay32    0x000a72         0x1c /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(delay32.eo)
-                  0x000a72                  ___delay32
-
-.text             0x000a8e         0x18
- .text            0x000a8e         0x18 build/default/production/main.o
-                  0x000a8e                  _main
+.init.delay32     0x000a8a         0x1c
+ .init.delay32    0x000a8a         0x1c /Applications/microchip/xc16/v1.23/bin/bin/../../lib/libpic30-elf.a(delay32.eo)
+                  0x000a8a                  ___delay32
 
 .dinit            0x000aa6          0xe
  .dinit           0x000aa6          0xe data_init

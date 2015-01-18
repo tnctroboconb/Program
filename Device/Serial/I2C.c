@@ -7,6 +7,12 @@ I2CProtocol I2C;
 
 #if USE_I2C == ENABLE
 
+#if MASTER == 1
+
+#endif
+
+#if SLAVE == 1
+
 I2CProtocol* Use_I2C(){
     if(!I2C.Initialized){
         I2C.I2CInit = Init_I2C;
@@ -22,11 +28,6 @@ I2CProtocol* Use_I2C(){
 }
 
 
-#if MASTER == 1
-
-#endif
-
-#if SLAVE == 1
 BOOL Init_I2C(Address_t* Addr){
     //SSP1CON1 Initialization
     SSP1CON1bits.WCOL = 0;
@@ -76,18 +77,19 @@ BOOL GetID(Address_t* Addr){
     return TRUE;
 }
 
-BOOL Start_I2C(Address_t* Addr){
+BOOL Start_I2C(){
     return TRUE;
 }
+
 BOOL Restart_I2C(){
     SSP1CON1bits.CKP = 1;
     IFS1bits.SSP1IF = 0;
     return TRUE;
 }
-BOOL Send_Data(Address_t* Addr,BYTE Data){
+BOOL Send_Data(){
     return TRUE;
 }
-BOOL Get_Data(State_t* Addr){
+BOOL Get_Data(State_t* State){
     return TRUE;
 }
 
